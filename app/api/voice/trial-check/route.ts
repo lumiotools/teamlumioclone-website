@@ -1,8 +1,8 @@
 import { getUserVoiceAvailableSeconds } from "@/utils/voiceChatTrial";
 import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export const GET = async (request: NextRequest) => {
+export const GET = async () => {
   try {
     const userIP = (await headers()).get("x-forwarded-for");
 
