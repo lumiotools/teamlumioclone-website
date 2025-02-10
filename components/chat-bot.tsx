@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Send, X } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
+import { sendHistory } from "@/utils/reportHistory";
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,6 +89,19 @@ export default function ChatBot() {
 
       setMessages([...messages, newMessage, aiMessage]);
     }
+
+    await sendHistory(
+      [
+        ...messages,
+        newMessage,
+        {
+          role: "assistant",
+          content: result,
+          timestamp: new Date().toLocaleTimeString([], { timeStyle: "short" }),
+        },
+      ],
+      "chat"
+    );
   };
 
   return (

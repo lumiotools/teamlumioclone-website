@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,6 +10,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { MicIcon } from "lucide-react";
+import {
+  startRealtimeSession,
+  stopRealtimeSession,
+} from "@/utils/openaiRealtimeVoice";
 
 export function VoiceAgentModal({
   isOpen,
@@ -20,6 +24,9 @@ export function VoiceAgentModal({
 }) {
   const [timeLeft, setTimeLeft] = useState(60);
   const [isRecording, setIsRecording] = useState(false);
+  const connectionRef = useRef<RTCPeerConnection | null>(null);
+  const dataChannelRef = useRef<RTCDataChannel | null>(null);
+  const conversationHistoryRef = useRef<object[]>([]); // New Ref for history
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -27,12 +34,46 @@ export function VoiceAgentModal({
       timer = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
+    } else if (timeLeft === 0) {
+      handleStopRecording();
     }
     return () => clearInterval(timer);
   }, [isRecording, timeLeft]);
 
-  const handleStartRecording = () => {
+  useEffect(() => {
+    if (!isOpen && isRecording) {
+      handleStopRecording();
+    }
+  }, [isOpen]);
+
+  const handleStartRecording = async () => {
+    if (connectionRef.current) {
+      console.warn("Connection already exists. Restarting...");
+      await handleStopRecording();
+    }
+
+    const newConnection = new RTCPeerConnection();
+    connectionRef.current = newConnection;
+
+    await startRealtimeSession(
+      newConnection,
+      dataChannelRef,
+      conversationHistoryRef
+    );
     setIsRecording(true);
+  };
+
+  const handleStopRecording = async () => {
+    if (connectionRef.current) {
+      await stopRealtimeSession(
+        connectionRef.current,
+        dataChannelRef,
+        conversationHistoryRef
+      );
+      connectionRef.current = null;
+      dataChannelRef.current = null;
+    }
+    setIsRecording(false);
   };
 
   return (
@@ -51,7 +92,7 @@ export function VoiceAgentModal({
             size="lg"
             className="h-24 w-24 rounded-full"
             onClick={handleStartRecording}
-            disabled={isRecording && timeLeft === 0}
+            disabled={isRecording}
           >
             <MicIcon className="h-12 w-12" />
           </Button>
