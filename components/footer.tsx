@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
 import { Ubuntu } from "next/font/google";
+import Link from "next/link";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -25,7 +26,11 @@ export function Footer({ setCurrentPage }: FooterProps) {
 
     social: [
       // { name: "Twitter", icon: TwitterIcon },
-      { name: "LinkedIn", icon: LinkedinIcon },
+      {
+        name: "LinkedIn",
+        icon: LinkedinIcon,
+        href: "https://www.linkedin.com/company/lumio-ai",
+      },
       // { name: "Facebook", icon: FacebookIcon },
     ],
   };
@@ -72,14 +77,16 @@ export function Footer({ setCurrentPage }: FooterProps) {
               </p>
               <div className="flex gap-4">
                 {links.social.map((social, index) => (
-                  <Button
+                  <Link
                     key={social.name}
-                    variant="ghost"
-                    size="icon"
                     id={`90gbu0_${index}`}
+                    href={social.href}
+                    target="_blank"
                   >
-                    <social.icon className="h-5 w-5" id={`s19iip_${index}`} />
-                  </Button>
+                    <Button variant="ghost" size="icon">
+                      <social.icon className="h-5 w-5" id={`s19iip_${index}`} />
+                    </Button>
+                  </Link>
                 ))}
               </div>
             </div>
