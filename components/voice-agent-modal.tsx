@@ -94,7 +94,7 @@ export function VoiceAgentModal({
             onClick={handleStartRecording}
             disabled={isRecording}
           >
-            <MicIcon className="h-12 w-12" />
+            <MicIcon className="!size-8" />
           </Button>
           {isRecording && (
             <div className="text-center">
