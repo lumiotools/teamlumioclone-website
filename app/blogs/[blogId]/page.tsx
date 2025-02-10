@@ -1,18 +1,26 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import Image from "next/image";
+import {  blogPosts, type BlogPost } from "@/constants/blog-data";
+import {  ArrowRightIcon } from "lucide-react";
+import { useParams } from "next/navigation";
 
 export default function BlogPost() {
+  // const router = useRouter();
+  const params = useParams();
+  const blogId = Number(params.blogId);  // Extract blog ID from URL params
+
+  // Find the blog post based on the ID
+  const post = blogPosts.find((post) => post.id === blogId);
+  console.log(post, blogId);
   return (
     <div className="min-h-screen bg-background">
       <article className="container px-4 py-20">
         {/* Back to Blogs Button */}
-        <Button
+        {/* <Button
           variant="ghost"
           className="mb-8 group hover:bg-transparent"
-          // onClick={() => setSelectedBlogId(null)}
+          onClick={() => router.back()}
         >
           <ArrowLeftIcon
             className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
@@ -22,35 +30,29 @@ export default function BlogPost() {
           >
             Back to All Blogs
           </span>
-        </Button>
+        </Button> */}
 
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
           <h1
             className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-center"
           >
-            Acumatica Summit AI: Revolutionizing ERP with Intelligent Solutions
+            {post?.title}
           </h1>
 
           {/* Featured Image */}
-          <div className="relative aspect-[16/9] mb-12">
-            <Image
-              src="https://picsum.photos/seed/acumatica/1200/800"
-              alt="Acumatica Summit AI"
-              fill
-              className="object-cover rounded-lg"
+          <div className="relative w-full overflow-hidden mb-12">
+            <img
+              src={post?.image}
+              alt={post?.title}
+              // fill
+              className="object-cover aspect-[16/9] w-full rounded-lg"
             />
           </div>
 
           {/* Introduction */}
           <p className="text-lg text-muted-foreground mb-12">
-            The business world is evolving, and the tools you use to manage your
-            operations need to evolve with it. If you&apos;re attending or exploring
-            insights from Acumatica Summit, it&apos;s time to discover how Artificial
-            Intelligence (AI) can transform your ERP experience. Imagine
-            streamlining your workflows, automating repetitive tasks, and making
-            data-driven decisions faster than ever before. This is the future of
-            business management—and it&apos;s already here.
+            {post?.content?.introduction}
           </p>
 
           {/* Main Content */}

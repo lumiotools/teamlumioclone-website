@@ -2,27 +2,35 @@ export function TechPlatforms() {
   const platforms = [
     {
       name: "OpenAI",
-      logo: "https://picsum.photos/seed/openai/120/40",
+      logo: "/images/logos/Chatgpt.png",
     },
     {
       name: "AWS",
-      logo: "https://picsum.photos/seed/aws/120/40",
+      logo: "/images/logos/aws.png",
     },
     {
       name: "Google Cloud",
-      logo: "https://picsum.photos/seed/google/120/40",
+      logo: "/images/logos/Cloud.png",
     },
     {
       name: "Azure",
-      logo: "https://picsum.photos/seed/azure/120/40",
+      logo: "/images/logos/groq.png",
     },
     {
       name: "Anthropic",
-      logo: "https://picsum.photos/seed/anthropic/120/40",
+      logo: "/images/logos/Langchain.png",
     },
     {
       name: "HuggingFace",
-      logo: "https://picsum.photos/seed/huggingface/120/40",
+      logo: "/images/logos/LLaMA-Meta.png",
+    },
+    {
+      name: "HuggingFace",
+      logo: "/images/logos/llamaindex2.png",
+    },
+    {
+      name: "HuggingFace",
+      logo: "/images/logos/Together.ai.png",
     },
   ];
 
@@ -39,18 +47,18 @@ export function TechPlatforms() {
           </p>
         </div>
         <div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"
+          className="flex flex-wrap gap-10 sm:gap-4 items-center justify-center"
         >
           {platforms.map((platform, index) => (
             <div
               key={index}
-              className="grayscale hover:grayscale-0 transition-all"
+              className="hover:grayscale-0 transition-all"
               id={`ft3wx3_${index}`}
             >
               <img
                 src={platform.logo}
                 alt={platform.name}
-                className="h-8 object-contain"
+                className="h-28 w-28 sm:h-20 sm:h-20 object-contain"
                 id={`mmq6p2_${index}`}
               />
             </div>
