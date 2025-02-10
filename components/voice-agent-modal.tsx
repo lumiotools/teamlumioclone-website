@@ -68,7 +68,8 @@ export function VoiceAgentModal({
       await stopRealtimeSession(
         connectionRef.current,
         dataChannelRef,
-        conversationHistoryRef
+        conversationHistoryRef,
+        timeLeft
       );
       connectionRef.current = null;
       dataChannelRef.current = null;

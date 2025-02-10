@@ -9,9 +9,11 @@ export const startRealtimeSession = async (
   try {
     // Fetch ephemeral key
     const tokenResponse = await fetch("/api/voice");
-    if (!tokenResponse.ok) throw new Error("Failed to fetch voice token");
 
     const data = await tokenResponse.json();
+    if (!data.success) {
+      throw new Error(data.message);
+    }
     const EPHEMERAL_KEY = data.data.voiceToken;
 
     // Set up to play remote audio from the model
@@ -96,7 +98,8 @@ export const startRealtimeSession = async (
 export const stopRealtimeSession = async (
   pc: RTCPeerConnection,
   dataChannelRef: RefObject<RTCDataChannel | null>,
-  conversationHistoryRef: RefObject<object[]> // Retrieve stored conversation history
+  conversationHistoryRef: RefObject<object[]>, // Retrieve stored conversation history
+  availableVoiceSeconds: number = 0
 ) => {
   try {
     if (!pc || pc.connectionState === "closed") {
@@ -138,7 +141,7 @@ export const stopRealtimeSession = async (
       conversationHistoryRef.current &&
       conversationHistoryRef.current.length > 0
     ) {
-      await sendHistory(conversationHistoryRef.current, "voice");
+      await sendHistory(conversationHistoryRef.current, "voice", availableVoiceSeconds);
 
       // Clear history after sending
       conversationHistoryRef.current = [];

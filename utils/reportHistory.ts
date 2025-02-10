@@ -1,4 +1,8 @@
-export const sendHistory = async (history: object[], mode: string) => {
+export const sendHistory = async (
+  history: object[],
+  mode: string,
+  availableVoiceSeconds?: number
+) => {
   await fetch("/api/history", {
     method: "POST",
     headers: {
@@ -7,6 +11,7 @@ export const sendHistory = async (history: object[], mode: string) => {
     body: JSON.stringify({
       history,
       mode,
+      ...(mode === "voice" && { availableVoiceSeconds }),
     }),
   });
 };

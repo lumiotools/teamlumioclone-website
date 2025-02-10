@@ -1,8 +1,21 @@
 import { VOICE_SYSTEM_PROMPT } from "@/constants/systemPrompts";
+import { validateUserVoiceTrial } from "@/utils/voiceChatTrial";
+import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
+    const userIP = (await headers()).get("x-forwarded-for");
+
+    const isValidFreeTrial = await validateUserVoiceTrial(userIP as string);
+
+    if (!isValidFreeTrial) {
+      return NextResponse.json({
+        success: false,
+        message: "You have run out of your free voice chat trial",
+      });
+    }
+
     const response = await (
       await fetch("https://api.openai.com/v1/realtime/sessions", {
         method: "POST",
