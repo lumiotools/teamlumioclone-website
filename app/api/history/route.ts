@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
+
 export const POST = async (request: NextRequest) => {
   try {
     const { history, mode } = await request.json();
@@ -9,6 +11,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({
       success: true,
       message: "Conversation history received",
+      yourIp: (await headers()).get("x-forwarded-host"),
     });
   } catch (error) {
     return NextResponse.json({
