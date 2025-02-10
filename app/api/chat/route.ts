@@ -24,7 +24,7 @@ export const POST = async (request: NextRequest) => {
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
-        for await (const chunk of response as any) {
+        for await (const chunk of response) {
           const text = chunk.choices[0]?.delta?.content || "";
           controller.enqueue(encoder.encode(text));
         }
