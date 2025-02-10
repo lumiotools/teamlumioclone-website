@@ -2,12 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 
-interface BlogsProps {
-  setSelectedBlogId: (id: number) => void;
-  setCurrentPage: (page: number) => void;
-}
-
-export default function Blogs({ setSelectedBlogId }: BlogsProps) {
+export default function Blogs() {
   const blogPosts = [
     {
       id: 1,
@@ -80,7 +75,7 @@ interface HandleBlogClick {
 }
 
 const handleBlogClick: HandleBlogClick = (blogId) => {
-    setSelectedBlogId(blogId);
+    // setSelectedBlogId(blogId);
 };
 
   return (
