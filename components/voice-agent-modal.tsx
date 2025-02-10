@@ -31,7 +31,7 @@ export function VoiceAgentModal({
   useEffect(() => {
     fetch("/api/voice/trial-check").then(async (res) => {
       const data = await res.json();
-      setTimeLeft(data.data.availableSeconds);
+      setTimeLeft(data.data.availableVoiceSeconds);
     });
   }, []);
 
