@@ -7,7 +7,7 @@ interface BlogsProps {
   setCurrentPage: (page: number) => void;
 }
 
-export default function Blogs({ setSelectedBlogId, setCurrentPage }: BlogsProps) {
+export default function Blogs({ setSelectedBlogId }: BlogsProps) {
   const blogPosts = [
     {
       id: 1,
@@ -67,13 +67,13 @@ export default function Blogs({ setSelectedBlogId, setCurrentPage }: BlogsProps)
     },
   ];
 
-interface BlogPost {
-    id: number;
-    title: string;
-    date: string;
-    image: string;
-    category: string;
-}
+// interface BlogPost {
+//     id: number;
+//     title: string;
+//     date: string;
+//     image: string;
+//     category: string;
+// }
 
 interface HandleBlogClick {
     (blogId: number): void;

@@ -118,10 +118,10 @@ export default function Careers() {
           {/* Culture Section */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              Lumio AI's Culture
+              Lumio AI&apos;s Culture
             </h2>
             <p className="text-lg text-muted-foreground">
-              Read about Lumio AI's trust, ownership, and results-driven
+              Read about Lumio AI&apos;s trust, ownership, and results-driven
               culture.
             </p>
           </div>

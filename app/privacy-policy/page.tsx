@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p className="text-muted-foreground">
-                Welcome to Lumio AI ("Company," "we," "our," or "us"). We are
+                Welcome to Lumio AI (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are
                 committed to safeguarding your privacy and ensuring the security
                 of your personal information. This Privacy Policy outlines how
                 we collect, use, disclose, and protect your data when you

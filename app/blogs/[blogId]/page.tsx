@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 
-interface BlogPostProps {
-  setSelectedBlogId: (id: string | null) => void;
-}
-
-export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
+export default function BlogPost() {
   return (
     <div className="min-h-screen bg-background">
       <article className="container px-4 py-20">
@@ -16,7 +12,7 @@ export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
         <Button
           variant="ghost"
           className="mb-8 group hover:bg-transparent"
-          onClick={() => setSelectedBlogId(null)}
+          // onClick={() => setSelectedBlogId(null)}
         >
           <ArrowLeftIcon
             className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
@@ -49,12 +45,12 @@ export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
           {/* Introduction */}
           <p className="text-lg text-muted-foreground mb-12">
             The business world is evolving, and the tools you use to manage your
-            operations need to evolve with it. If you're attending or exploring
-            insights from Acumatica Summit, it's time to discover how Artificial
+            operations need to evolve with it. If you&apos;re attending or exploring
+            insights from Acumatica Summit, it&apos;s time to discover how Artificial
             Intelligence (AI) can transform your ERP experience. Imagine
             streamlining your workflows, automating repetitive tasks, and making
             data-driven decisions faster than ever before. This is the future of
-            business management—and it's already here.
+            business management—and it&apos;s already here.
           </p>
 
           {/* Main Content */}
@@ -71,7 +67,7 @@ export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
                   </h3>
                   <p className="text-muted-foreground">
                     Tired of chasing overdue invoices? Our AI solution
-                    integrates seamlessly with Acumatica's AR data to automate
+                    integrates seamlessly with Acumatica&apos;s AR data to automate
                     reminders, schedule calls, adjust payment terms, and
                     escalate issues when needed. Spend less time on follow-ups
                     and more on growing your business.
@@ -86,7 +82,7 @@ export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
                     Let AI handle inbound leads. From qualifying prospects to
                     scheduling follow-up tasks, our AI-powered sales assistant
                     keeps your pipeline moving so your team can focus on closing
-                    deals. Integration with Acumatica's CRM ensures no
+                    deals. Integration with Acumatica&apos;s CRM ensures no
                     opportunity slips through the cracks.
                   </p>
                 </div>
@@ -149,7 +145,7 @@ export default function BlogPost({ setSelectedBlogId }: BlogPostProps) {
 
             <div>
               <p className="text-lg mb-8">
-                Whether you're attending Acumatica Summit 2025 or searching for
+                Whether you&apos;re attending Acumatica Summit 2025 or searching for
                 innovative ways to enhance your ERP, AI solutions tailored for
                 Acumatica can redefine how you work. From collections automation
                 to proactive inventory management, we provide powerful tools to

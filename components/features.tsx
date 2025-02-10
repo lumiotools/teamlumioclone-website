@@ -74,7 +74,7 @@ export function Features() {
           <p
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Describe your company's unique workflows and challenges, and we'll
+            Describe your company&apos;s unique workflows and challenges, and we&apos;ll
             develop a custom AI agent that perfectly matches your operational
             needs.
           </p>
@@ -159,7 +159,7 @@ export function Features() {
               size="lg"
               className="rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
             >
-              Learn About What's Possible
+              Learn About What&apos;s Possible
               <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
             <Button

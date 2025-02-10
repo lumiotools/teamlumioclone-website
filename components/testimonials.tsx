@@ -71,7 +71,7 @@ export function Testimonials() {
             <Card key={index} className="bg-background flex flex-col h-full">
             <CardContent className="pt-6 flex flex-col h-full">
               <div className="flex flex-col flex-grow">
-                <p className="text-lg mb-6">"{testimonial.quote}"</p>
+                <p className="text-lg mb-6">&quot;{testimonial.quote}&quot;</p>
               </div>
               <div className="flex items-center gap-4 mt-auto">
                 <img

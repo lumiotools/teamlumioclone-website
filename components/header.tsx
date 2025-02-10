@@ -33,10 +33,10 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
     page: string;
   }
 
-  interface HandleNavClickEvent
-    extends React.MouseEvent<HTMLElement, MouseEvent> {}
-
-  const handleNavClick = (item: NavItem, e: HandleNavClickEvent) => {
+  const handleNavClick = (
+    item: NavItem,
+    e: React.MouseEvent<HTMLElement, MouseEvent>
+  ) => {
     e.preventDefault();
     setCurrentPage(item.page);
     if (item.href.startsWith("#") && item.page === "home") {
@@ -82,7 +82,7 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
           </nav>
         </div>
         <div className="hidden md:flex items-center gap-4">
-          <Button>Let's Talk</Button>
+          <Button>Let&apos;s Talk</Button>
         </div>
         <button
           className="md:hidden"
@@ -108,7 +108,7 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-4 border-t">
-              <Button>Let's Talk</Button>
+              <Button>Let&apos;s Talk</Button>
             </div>
           </nav>
         </div>

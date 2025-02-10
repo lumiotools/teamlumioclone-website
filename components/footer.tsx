@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { TwitterIcon, LinkedinIcon, FacebookIcon } from "lucide-react";
+import { LinkedinIcon } from "lucide-react";
 import { Ubuntu } from "next/font/google";
 
 const ubuntu = Ubuntu({

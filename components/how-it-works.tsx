@@ -90,7 +90,7 @@ export function HowItWorks() {
                     Book Your Free AI Audit Today
                   </h3>
                   <p className="text-primary-foreground/80">
-                    Let's discuss how AI can accelerate your business growth
+                    Let&apos;s discuss how AI can accelerate your business growth
                   </p>
                 </div>
                 <Button

@@ -67,7 +67,7 @@ export function AboutUs() {
               Founded by Kush Jain and Ananth Subramanya, our team brings
               together expert engineers and strategists from top engineering
               institutions and leading tech giants such as Intuit, Cisco,
-              Amazon, and Microsoft. We've been recognized by Forbes 30 Under 30
+              Amazon, and Microsoft. We&apos;ve been recognized by Forbes 30 Under 30
               and the CES Innovation Award for our groundbreaking AI solutions.
               Whether you need smarter operations, AI-powered customer
               interactions, or seamless integrations, we make AI accessible,
@@ -78,7 +78,7 @@ export function AboutUs() {
           <Card className="bg-background mb-8">
             <CardContent className="p-8">
               <h3 className="text-lg font-semibold mb-10 text-center">
-                Our Team's Experience
+                Our Team&apos;s Experience
               </h3>
               <div className="gri grid-cols-2 md:grid-cols-4 flex flex-wrap gap-10 items-center justify-center">
                 {companies.map((company, index) => (

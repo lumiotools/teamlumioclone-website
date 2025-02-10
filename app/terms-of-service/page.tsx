@@ -19,8 +19,8 @@ export default function TermsOfService() {
               </h2>
               <p className="text-muted-foreground">
                 By accessing or using the services provided by Lumio AI
-                ("Company," "we," "our," or "us"), you ("User," "you," or
-                "your") agree to comply with and be bound by these Terms of
+                (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you (&quot;User,&quot; &quot;you,&quot; or
+                &quot;your&quot;) agree to comply with and be bound by these Terms of
                 Service. If you do not agree with these terms, please do not use
                 our services.
               </p>
@@ -139,7 +139,7 @@ export default function TermsOfService() {
                   <strong className="text-foreground">
                     No Warranty:
                   </strong>{" "}
-                  Our services are provided "as is" without any warranties,
+                  Our services are provided &quot;as is&quot; without any warranties,
                   express or implied.
                 </p>
                 <p className="text-muted-foreground">

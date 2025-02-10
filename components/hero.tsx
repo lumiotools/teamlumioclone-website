@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { BoltIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import { VoiceAgentModal } from "@/components/voice-agent-modal";
 
 export function Hero() {
