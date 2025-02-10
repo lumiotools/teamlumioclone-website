@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Send, X } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { cn } from "@/lib/utils";
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +24,7 @@ export default function ChatBot() {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,6 +33,12 @@ export default function ChatBot() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   const quickOptions = [
     "What is Lumio, and how can it help my business?",
@@ -50,17 +59,35 @@ export default function ChatBot() {
     setInputValue("");
     setIsTyping(true);
 
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "I understand your question. How else can I assist you?",
-          timestamp: new Date().toLocaleTimeString([], { timeStyle: "short" }),
-        },
-      ]);
-      setIsTyping(false);
-    }, 1000);
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      body: JSON.stringify({ messages: [...messages, newMessage] }),
+    });
+
+    setIsTyping(false);
+
+    const reader = response.body ? response.body.getReader() : null;
+
+    let result = "";
+
+    while (true) {
+      const { done, value } = (await reader?.read()) || {
+        done: true,
+        value: new Uint8Array(),
+      };
+
+      if (done) break;
+
+      result += new TextDecoder().decode(value);
+
+      const aiMessage = {
+        role: "assistant",
+        content: result,
+        timestamp: new Date().toLocaleTimeString([], { timeStyle: "short" }),
+      };
+
+      setMessages([...messages, newMessage, aiMessage]);
+    }
   };
 
   return (
@@ -73,12 +100,8 @@ export default function ChatBot() {
       />
 
       {showWelcome && (
-        <div
-          className="fixed bottom-20 right-4 bg-white rounded-lg shadow-lg p-4 max-w-[200px] animate-fade-in"
-        >
-          <p className="text-sm">
-            Hello! Feel free to ask me...
-          </p>
+        <div className="fixed bottom-20 right-4 bg-white rounded-lg shadow-lg p-4 max-w-[200px] animate-fade-in">
+          <p className="text-sm">Hello! Feel free to ask me...</p>
         </div>
       )}
 
@@ -95,24 +118,16 @@ export default function ChatBot() {
         }`}
       >
         <div className="h-full flex flex-col">
-          <div
-            className="p-4 border-b flex items-center justify-between"
-          >
+          <div className="p-4 border-b flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Avatar>
-                <AvatarImage
-                  src="https://github.com/polymet-ai.png"
-                />
+                <AvatarImage src="https://github.com/polymet-ai.png" />
 
                 <AvatarFallback>AI</AvatarFallback>
               </Avatar>
               <div>
-                <h2 className="font-semibold">
-                  AI Assistant by Lumio
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  Online
-                </p>
+                <h2 className="font-semibold">AI Assistant by Lumio</h2>
+                <p className="text-sm text-muted-foreground">Online</p>
               </div>
             </div>
             <Button
@@ -158,9 +173,14 @@ export default function ChatBot() {
                     }`}
                     id={`smh9w1_${index}`}
                   >
-                    <p className="text-sm" id={`r5y9k6_${index}`}>
+                    <ReactMarkdown
+                      className={cn(
+                        "prose-sm",
+                        message.role === "user" ? "prose-invert" : "prose"
+                      )}
+                    >
                       {message.content}
-                    </p>
+                    </ReactMarkdown>
                     <p
                       className="text-xs opacity-70 mt-1"
                       id={`3ub16h_${index}`}
@@ -175,13 +195,12 @@ export default function ChatBot() {
               <div className="flex justify-start mb-4">
                 <Card className="w-fit">
                   <CardContent className="p-2">
-                    <Badge variant="secondary">
-                      AI is typing...
-                    </Badge>
+                    <Badge variant="secondary">AI is typing...</Badge>
                   </CardContent>
                 </Card>
               </div>
             )}
+            <div ref={chatEndRef} />
           </ScrollArea>
 
           <div className="p-4 border-t">

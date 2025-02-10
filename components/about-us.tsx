@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export function AboutUs() {
   const companies = [
@@ -16,27 +17,39 @@ export function AboutUs() {
     },
     {
       name: "Microsoft",
-      logo: "/images/logos/Microsoft logo.png",
+      logo: "/images/logos/Microsoft-Logo.png",
     },
     {
-      name:"Cornell University",
-      logo:"/images/logos/Cornell logo.png"
-    },{
+      name: "Amazon",
+      logo: "/images/logos/amazon.webp",
+    },
+    {
+      name: "Cornell University",
+      logo: "/images/logos/Cornell logo.png",
+    },
+    {
       name: "Wisconsil University",
-      logo: "/images/logos/Wisconsil logo.png"
-    },{
+      logo: "/images/logos/Wisconsil logo.png",
+    },
+    {
       name: "IIT",
-      logo: "/images/logos/IIT logo.png"
-    },{
-      name:"Cambridge",
-      logo:"/images/logos/Cambridge logo.png"
-    }
+      logo: "/images/logos/IIT logo.png",
+    },
+    {
+      name: "Cambridge",
+      logo: "/images/logos/Cambridge logo.png",
+    },
+    {
+      name: "Harvard",
+      logo: "/images/logos/harvard.png",
+    },
   ];
 
   const awards = [
     {
       name: "Forbes 30 Under 30",
       logo: "/images/logos/Forbes logo.png",
+      className: "py-4",
     },
     {
       name: "CES Innovation Award",
@@ -49,9 +62,7 @@ export function AboutUs() {
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight mb-6">
-              About Us
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight mb-6">About Us</h2>
             <p className="text-lg text-muted-foreground mb-12">
               Founded by Kush Jain and Ananth Subramanya, our team brings
               together expert engineers and strategists from top engineering
@@ -66,14 +77,10 @@ export function AboutUs() {
 
           <Card className="bg-background mb-8">
             <CardContent className="p-8">
-              <h3
-                className="text-lg font-semibold mb-12 text-center"
-              >
+              <h3 className="text-lg font-semibold mb-10 text-center">
                 Our Team's Experience
               </h3>
-              <div
-                className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center"
-              >
+              <div className="gri grid-cols-2 md:grid-cols-4 flex flex-wrap gap-10 items-center justify-center">
                 {companies.map((company, index) => (
                   <div
                     key={index}
@@ -83,7 +90,7 @@ export function AboutUs() {
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-h-10 object-contain"
+                      className="max-h-10 max-w-36 w-36 object-contain"
                       id={`bbjzhn_${index}`}
                     />
                   </div>
@@ -94,14 +101,10 @@ export function AboutUs() {
 
           <Card className="bg-background">
             <CardContent className="p-8">
-              <h3
-                className="text-lg font-semibold mb-12 text-center"
-              >
+              <h3 className="text-lg font-semibold mb-12 text-center">
                 Recognition & Awards
               </h3>
-              <div
-                className="flex flex-col md:flex-row gap-20 items-center justify-center"
-              >
+              <div className="flex flex-col md:flex-row gap-20 items-center justify-center">
                 {awards.map((award, index) => (
                   <div
                     key={index}
@@ -111,7 +114,10 @@ export function AboutUs() {
                     <img
                       src={award.logo}
                       alt={award.name}
-                      className="max-h-20 max-w-72 object-cover"
+                      className={cn(
+                        "max-h-20 max-w-72 object-cover",
+                        award.className
+                      )}
                       id={`s9l5h6_${index}`}
                     />
                   </div>
