@@ -90,7 +90,7 @@ export function AboutUs() {
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-h-10 max-w-36 w-36 object-contain"
+                      className="max-h-12 max-w-36 w-36 object-contain"
                       id={`bbjzhn_${index}`}
                     />
                   </div>
