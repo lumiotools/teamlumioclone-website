@@ -11,7 +11,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({
       success: true,
       message: "Conversation history received",
-      yourIp: (await headers()).get("x-forwarded-host"),
+      yourIp: (await headers()).get("x-forwarded-for"),
     });
   } catch (error) {
     return NextResponse.json({
