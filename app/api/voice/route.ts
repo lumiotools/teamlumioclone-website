@@ -7,6 +7,10 @@ export const GET = async () => {
   try {
     const userIP = (await headers()).get("x-forwarded-for");
 
+    if (userIP?.split(".").length !== 4) {
+      throw new Error("User IP not found");
+    }
+
     const isValidFreeTrial = await validateUserVoiceTrial(userIP as string);
 
     if (!isValidFreeTrial) {

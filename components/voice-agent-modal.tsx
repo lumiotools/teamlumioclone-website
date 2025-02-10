@@ -22,7 +22,7 @@ export function VoiceAgentModal({
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
 }) {
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
   const connectionRef = useRef<RTCPeerConnection | null>(null);
   const dataChannelRef = useRef<RTCDataChannel | null>(null);

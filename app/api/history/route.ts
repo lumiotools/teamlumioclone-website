@@ -4,13 +4,18 @@ import { updateUserVoiceTrial } from "@/utils/voiceChatTrial";
 
 export const POST = async (request: NextRequest) => {
   try {
+    const userIP = (await headers()).get("x-forwarded-for");
+
+    if (userIP?.split(".").length !== 4) {
+      throw new Error("User IP not found");
+    }
+
     const { history, mode, availableVoiceSeconds } = await request.json();
 
     console.log("Received conversation history:", history);
     console.log("Mode:", mode);
 
     if (mode === "voice") {
-      const userIP = (await headers()).get("x-forwarded-for");
       await updateUserVoiceTrial(
         userIP as string,
         availableVoiceSeconds !== undefined ? availableVoiceSeconds : 0
