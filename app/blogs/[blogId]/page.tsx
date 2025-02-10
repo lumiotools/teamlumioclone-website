@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {  blogPosts, type BlogPost } from "@/constants/blog-data";
 import {  ArrowRightIcon } from "lucide-react";
 import { useParams } from "next/navigation";
+import  ReactMarkdown  from 'react-markdown';
 
 export default function BlogPost() {
   // const router = useRouter();
@@ -13,6 +14,7 @@ export default function BlogPost() {
   // Find the blog post based on the ID
   const post = blogPosts.find((post) => post.id === blogId);
   console.log(post, blogId);
+  
   return (
     <div className="min-h-screen bg-background">
       <article className="container px-4 py-20">
@@ -35,7 +37,7 @@ export default function BlogPost() {
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
           <h1
-            className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-center"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-center"
           >
             {post?.title}
           </h1>
@@ -50,12 +52,14 @@ export default function BlogPost() {
             />
           </div>
 
-          {/* Introduction */}
+          <ReactMarkdown className="prose lg:prose-xl">{post?.content}</ReactMarkdown>
+
+          {/* Introduction
           <p className="text-lg text-muted-foreground mb-12">
             {post?.content?.introduction}
           </p>
 
-          {/* Main Content */}
+          {/* Main Content *
           <section className="space-y-12">
             <div>
               <h2 className="text-3xl font-bold mb-6">
@@ -154,14 +158,15 @@ export default function BlogPost() {
                 empower your business.
               </p>
 
-              <div className="flex justify-center">
+             
+            </div>
+          </section> */}
+           <div className="flex justify-center mt-10">
                 <Button size="lg" className="rounded-full">
                   Book a Free Consultation
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </Button>
               </div>
-            </div>
-          </section>
         </div>
       </article>
     </div>

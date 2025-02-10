@@ -58,7 +58,7 @@ export function Footer({ setCurrentPage }: FooterProps) {
             <div className="w-full md:w-1/3">
               <div className="flex items-center gap-2 mb-4">
                 <div className="h-8 w-8">
-                  <img src="/images/logos/Lumio AI.png" />
+                  <img src="/images/logos/Lumio AI.png"/>
                 </div>
                 <span
                   className={`text-xl font-bold text-primary ${ubuntu.className}`}
