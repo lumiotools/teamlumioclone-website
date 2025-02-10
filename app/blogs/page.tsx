@@ -75,6 +75,7 @@ interface HandleBlogClick {
 }
 
 const handleBlogClick: HandleBlogClick = (blogId) => {
+  console.log(blogId);
     // setSelectedBlogId(blogId);
 };
 
