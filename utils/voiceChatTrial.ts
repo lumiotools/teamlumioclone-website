@@ -27,6 +27,7 @@ export const getUserVoiceAvailableSeconds = async (userIP: string) => {
   if (redisValue) {
     return parseInt(redisValue, 10);
   } else {
+    await redisClient.set(redisKey, 60);
     return 60;
   }
 };

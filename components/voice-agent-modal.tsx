@@ -100,7 +100,7 @@ export function VoiceAgentModal({
             size="lg"
             className="h-24 w-24 rounded-full"
             onClick={handleStartRecording}
-            disabled={isRecording}
+            disabled={isRecording || timeLeft <= 0}
           >
             <MicIcon className="!size-8" />
           </Button>
@@ -110,6 +110,14 @@ export function VoiceAgentModal({
                 Trial ends in {Math.floor(timeLeft / 60)}:
                 {(timeLeft % 60).toString().padStart(2, "0")}
               </p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Meet with us to experience the depth of our AI agents.
+              </p>
+            </div>
+          )}
+          {timeLeft <= 0 && (
+            <div className="text-center">
+              <p className="text-lg font-medium text-destructive">Your free voice chat trial has ended</p>
               <p className="text-sm text-muted-foreground mt-2">
                 Meet with us to experience the depth of our AI agents.
               </p>
