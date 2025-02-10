@@ -4,6 +4,7 @@ export const POST = async (request: NextRequest) => {
     const { history, mode } = await request.json();
 
     console.log("Received conversation history:", history);
+    console.log("Mode:", mode);
 
     return NextResponse.json({
       success: true,
