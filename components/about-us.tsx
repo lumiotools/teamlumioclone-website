@@ -49,12 +49,39 @@ export function AboutUs() {
     {
       name: "Forbes 30 Under 30",
       logo: "/images/logos/Forbes logo.png",
-      className: "py-4",
+      className: "py-6",
     },
     {
       name: "CES Innovation Award",
       logo: "/images/logos/CSE logo.png",
     },
+    {
+      name:"Business Standard",
+      logo:"/images/logos/business-standard.png"
+    },
+    {
+      name:"Deccan Herald",
+      logo:"/images/logos/Deccan Herald.png",
+      className: "invert py-4",
+    },
+    {
+      name:"Housing Wire",
+      logo:"/images/logos/housing wire.svg"
+    },
+    {
+      name:"New Atlas",
+      logo:"/images/logos/new atlas.svg",
+      className:'w-full h-[32px]'
+    },
+    {
+      name:"Wowtale",
+      logo:"/images/logos/wowtale.png",
+      className:""
+    },
+    {
+      name:"Yahoo",
+      logo:"/images/logos/yahoo.png"
+    }
   ];
 
   return (
@@ -84,7 +111,7 @@ export function AboutUs() {
                 {companies.map((company, index) => (
                   <div
                     key={index}
-                    // className="grayscale hover:grayscale-0 transition-all"
+                    className="flex-shrink-0"
                     id={`a5w3y4_${index}`}
                   >
                     <img
@@ -104,7 +131,7 @@ export function AboutUs() {
               <h3 className="text-lg font-semibold mb-12 text-center">
                 Recognition & Awards
               </h3>
-              <div className="flex flex-col md:flex-row gap-20 items-center justify-center">
+              <div className="flex flex-wrap  gap-10 items-center justify-center">
                 {awards.map((award, index) => (
                   <div
                     key={index}
@@ -115,7 +142,7 @@ export function AboutUs() {
                       src={award.logo}
                       alt={award.name}
                       className={cn(
-                        "max-h-20 max-w-72 object-cover",
+                        "max-h-20 max-w-40 object-cover",
                         award.className
                       )}
                       id={`s9l5h6_${index}`}
