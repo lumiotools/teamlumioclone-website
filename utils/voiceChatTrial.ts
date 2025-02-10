@@ -3,16 +3,7 @@ import Redis from "ioredis";
 const redisClient = new Redis(process.env.REDIS_URL as string);
 
 export const validateUserVoiceTrial = async (userIP: string) => {
-  let availableSeconds = 60;
-
-  const redisKey = `user:${userIP}:availableVoiceChatSeconds`;
-  const redisValue = await redisClient.get(redisKey);
-
-  if (redisValue) {
-    availableSeconds = parseInt(redisValue, 10);
-  } else {
-    await redisClient.set(redisKey, availableSeconds);
-  }
+  let availableSeconds = await getUserVoiceAvailableSeconds(userIP);
 
   if (availableSeconds <= 0) {
     return false;
@@ -27,4 +18,15 @@ export const updateUserVoiceTrial = async (
 ) => {
   const redisKey = `user:${userIP}:availableVoiceChatSeconds`;
   await redisClient.set(redisKey, availableSeconds);
+};
+
+export const getUserVoiceAvailableSeconds = async (userIP: string) => {
+  const redisKey = `user:${userIP}:availableVoiceChatSeconds`;
+  const redisValue = await redisClient.get(redisKey);
+
+  if (redisValue) {
+    return parseInt(redisValue, 10);
+  } else {
+    return 60;
+  }
 };

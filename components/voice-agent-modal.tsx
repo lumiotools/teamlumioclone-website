@@ -29,6 +29,13 @@ export function VoiceAgentModal({
   const conversationHistoryRef = useRef<object[]>([]); // New Ref for history
 
   useEffect(() => {
+    fetch("/api/voice/trial-check").then(async (res) => {
+      const data = await res.json();
+      setTimeLeft(data.data.availableSeconds);
+    });
+  }, []);
+
+  useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isRecording && timeLeft > 0) {
       timer = setInterval(() => {
