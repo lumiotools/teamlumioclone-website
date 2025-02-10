@@ -5,7 +5,7 @@ export function AboutUs() {
   const companies = [
     {
       name: "HP",
-      logo: "/images/logos/HP logo.png",
+      logo: "/images/logos/hp.png",
     },
     {
       name: "Intuit",
@@ -33,7 +33,7 @@ export function AboutUs() {
     },
     {
       name: "IIT",
-      logo: "/images/logos/IIT logo.png",
+      logo: "/images/logos/iit.png",
     },
     {
       name: "Cambridge",
