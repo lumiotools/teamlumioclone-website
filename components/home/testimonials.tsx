@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { PlayIcon } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
+import { motion } from "framer-motion";
 
 export function Testimonials() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -61,6 +62,8 @@ export function Testimonials() {
     },
   ];
 
+  const MotionCard = motion(Card);
+
   return (
     <Dialog
       open={!!activeVideo}
@@ -68,7 +71,19 @@ export function Testimonials() {
     >
       <section className="py-20 bg-accent/50" id="testimonials">
         <div className="container px-4">
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto mb-16"
+          >
             <h2 className="text-3xl font-bold tracking-tight mb-4">
               Trusted by Small to Medium Sized Businesses like Yours
             </h2>
@@ -76,10 +91,24 @@ export function Testimonials() {
               See how businesses across industries are leveraging our AI
               solutions to transform their operations and drive growth.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-background flex flex-col h-full">
+              <MotionCard
+                key={index}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2 * index,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+                className="bg-background flex flex-col h-full"
+              >
                 <CardContent className="pt-6 flex flex-col h-full">
                   <div className="flex flex-col flex-grow">
                     <p className="text-lg mb-6">
@@ -120,7 +149,7 @@ export function Testimonials() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </MotionCard>
             ))}
           </div>
         </div>

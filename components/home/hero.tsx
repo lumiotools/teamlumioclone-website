@@ -4,12 +4,24 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { VoiceAgentModal } from "@/components/home/voice-agent-modal";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
   return (
-    <div className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true }}
+      className="relative overflow-hidden min-h-[calc(100vh-4rem)]"
+    >
       <div className="container px-4 h-full flex items-center min-h-[calc(100vh-4rem)]">
         <div className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto">
           {/* <div
@@ -36,7 +48,7 @@ export function Hero() {
           </p>
           <div className="flex flex-col items-center gap-4 w-full">
             <Button size="lg" className="w-[200px]">
-            Get A Free AI Audit
+              Get A Free AI Audit
               <ArrowRightIcon className="ml-1 h-4 w-4" />
             </Button>
             {/* <div className="flex flex-col sm:flex-row gap-4">
@@ -91,6 +103,6 @@ export function Hero() {
         isOpen={isVoiceModalOpen}
         setIsOpen={setIsVoiceModalOpen}
       />
-    </div>
+    </motion.div>
   );
 }
