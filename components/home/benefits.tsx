@@ -87,7 +87,7 @@ export function Benefits() {
               key={index}
               id={`q3qpvb_${index}`}
             >
-              <Card className="border-none shadow-none bg-accent/50">
+              <Card className="border-none shadow-none h-full bg-accent/50">
                 <CardContent className="pt-6" id={`ijh8dq_${index}`}>
                   <div
                     className="flex flex-col items-start gap-4"
