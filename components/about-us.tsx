@@ -87,7 +87,7 @@ export function AboutUs() {
   return (
     <section className="py-20 bg-accent/50" id="about">
       <div className="container px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-6">About Us</h2>
             <p className="text-lg text-muted-foreground mb-12">
@@ -104,10 +104,10 @@ export function AboutUs() {
 
           <Card className="bg-background mb-8">
             <CardContent className="p-8">
-              <h3 className="text-lg font-semibold mb-10 text-center">
+              <h3 className="text-lg font-semibold mb-9 text-center">
                 Our Team&apos;s Experience
               </h3>
-              <div className="gri grid-cols-2 md:grid-cols-4 flex flex-wrap gap-10 items-center justify-center">
+              <div className="gri grid-cols-2 md:grid-cols-4 flex flex-wrap gap-10 gap-y-8 items-center justify-center">
                 {companies.map((company, index) => (
                   <div
                     key={index}
@@ -128,10 +128,10 @@ export function AboutUs() {
 
           <Card className="bg-background">
             <CardContent className="p-8">
-              <h3 className="text-lg font-semibold mb-10 text-center">
+              <h3 className="text-lg font-semibold mb-6 text-center">
                 Recognition & Awards
               </h3>
-              <div className="flex flex-wrap  gap-10 items-center justify-center">
+              <div className="flex flex-wrap  gap-10 gap-y-4 items-center justify-center">
                 {awards.map((award, index) => (
                   <div
                     key={index}

@@ -1,175 +1,264 @@
 "use client";
 
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
-  Brain,
-  ChevronRight,
-  Cpu,
-  Headphones,
-  LineChart,
-  Users,
+  PlayIcon,
+  HeadphonesIcon,
+  LineChartIcon,
+  UsersIcon,
+  CpuIcon,
+  ChevronRightIcon,
+  ChevronDownIcon,
+  Mic,
+  MessageSquare,
 } from "lucide-react";
-import { VoiceAgentModal } from "@/components/voice-agent-modal";
+import { VoiceAgentModal } from "./voice-agent-modal";
 
 export function Features() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [activeVideo, setActiveVideo] = useState(0);
+  const [expandedCapability, setExpandedCapability] = useState<number | null>(
+    0
+  );
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
-  const aiCapabilities = [
+  const capabilities = [
     {
-      icon: Headphones,
+      icon: HeadphonesIcon,
       title: "Customer Interaction",
-      examples: [
+      items: [
         "Handle support calls 24/7",
         "Process customer inquiries",
         "Manage email communications",
       ],
     },
     {
-      icon: LineChart,
+      icon: LineChartIcon,
       title: "Business Operations",
-      examples: [
-        "Process invoices & documents",
-        "Generate reports & analysis",
-        "Manage compliance tasks",
+      items: [
+        "Automate workflow processes",
+        "Generate reports automatically",
+        "Monitor KPIs in real-time",
       ],
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       title: "Team Support",
-      examples: [
-        "Schedule meetings & follow-ups",
-        "Handle HR processes",
-        "Coordinate team activities",
+      items: [
+        "Facilitate team collaboration",
+        "Automate task assignments",
+        "Track project progress",
       ],
     },
     {
-      icon: Cpu,
+      icon: CpuIcon,
       title: "Technical Tasks",
-      examples: [
-        "Data entry & validation",
-        "System monitoring",
-        "Technical support",
+      items: [
+        "Handle data processing",
+        "Manage system integrations",
+        "Automate technical workflows",
       ],
     },
   ];
 
-  return (
-    <section className="relative overflow-hidden bg-background" id="features">
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <Badge className="mb-4" variant="secondary">
-            Intelligent Automation
-          </Badge>
-          <h1 className="text-5xl font-bold tracking-tight mb-6">
-            Your Business Process,
-            <span className="text-primary">
-              {" "}
-              Our AI Solution
-            </span>
-          </h1>
-          <p
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
-          >
-            Describe your company&apos;s unique workflows and challenges, and we&apos;ll
-            develop a custom AI agent that perfectly matches your operational
-            needs.
-          </p>
-        </div>
+  const videoShowcase = [
+    {
+      title: "Business Process Automation",
+      description:
+        "Automate complete processes using intelligent AI agents.",
+      videoUrl: "/videos/features-ai-agents.mp4",
+    },
+    {
+      title: "Vision Based Automation",
+      description:
+        "Transform manual inspections into automated, real-time visual insights.",
+      videoUrl: "/videos/features-advanced-computer-vision.mp4",
+    },
+    {
+      title: "AI Assistants",
+      description:
+        "Make your employees 10X more productive with intelligent AI assistants.",
+      videoUrl: "/videos/features-ai-assistants.mp4",
+    },
+    {
+      title: "Video & Voice AI",
+      description:
+        "Automate voice and video processes using agents.",
+      videoUrl: "/videos/features-voice-and-video-ai.mp4",
+    },
+    {
+      title: "AI Powered Search",
+      description:
+        "Search your Data using Natural Language.",
+      videoUrl: "/videos/features-ai-search.mp4",
+    },
+  ];
 
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-        >
-          {aiCapabilities.map((capability, index) => (
-            <Card
-              key={index}
-              className="transition-all cursor-pointer bg-gradient-to-br from-background to-primary/5"
-              onClick={() =>
-                setExpandedIndex(expandedIndex === index ? null : index)
-              }
-              id={`ms4f1p_${index}`}
+  return (
+    <section className="py-20 bg-background">
+      <div className="container px-4">
+        {/* New Capabilities Section */}
+        <div className="mb-20">
+          <div className="text-center mb-8">
+            <Badge
+              variant="outline"
+              className="mb-4 px-4 py-1 text-sm font-medium"
             >
-              <CardContent className="p-6" id={`qj8l5m_${index}`}>
-                <div
-                  className="flex items-center gap-4 mb-4"
-                  id={`j0djai_${index}`}
-                >
+              Intelligent Automation
+            </Badge>
+            <h2 className="text-4xl font-bold tracking-tight mt-2">
+              Your Business Process,{" "}
+              <span className="text-primary">Our AI Solution</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+              Describe your company's unique workflows and challenges, and we'll
+              develop a custom AI agent that perfectly matches your operational
+              needs.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {capabilities.map((capability, index) => (
+              <Card
+                key={index}
+                className="p-6 hover:bg-accent/50 transition-colors cursor-pointer"
+                onClick={() =>
+                  setExpandedCapability(
+                    expandedCapability === index ? null : index
+                  )
+                }
+                id={`lycri3_${index}`}
+              >
+                <div className="flex items-center gap-4" id={`7xaokg_${index}`}>
                   <div
-                    className="rounded-full p-3 bg-primary/10"
-                    id={`nzx4bv_${index}`}
+                    className="p-2 rounded-lg bg-primary/10"
+                    id={`ufl9r4_${index}`}
                   >
                     <capability.icon
                       className="h-6 w-6 text-primary"
-                      id={`v03d0i_${index}`}
+                      id={`92iteu_${index}`}
                     />
                   </div>
-                  <h3 className="text-xl font-semibold" id={`mq28jw_${index}`}>
+                  <h3
+                    className="text-xl font-semibold flex-1"
+                    id={`ljka2a_${index}`}
+                  >
                     {capability.title}
                   </h3>
-                  <ChevronRight
-                    className={`ml-auto h-5 w-5 transition-transform ${
-                      expandedIndex === index ? "rotate-90" : ""
-                    }`}
-                    id={`w2zd6v_${index}`}
-                  />
+                  {expandedCapability === index ? (
+                    <ChevronDownIcon
+                      className="h-5 w-5 text-muted-foreground"
+                      id={`2soc4a_${index}`}
+                    />
+                  ) : (
+                    <ChevronRightIcon
+                      className="h-5 w-5 text-muted-foreground"
+                      id={`2soc4a_${index}`}
+                    />
+                  )}
                 </div>
-                <div
-                  className={`grid transition-all ${
-                    expandedIndex === index
-                      ? "grid-rows-[1fr]"
-                      : "grid-rows-[0fr]"
-                  }`}
-                  id={`ji0j47_${index}`}
-                >
-                  <div className="overflow-hidden" id={`7oip9j_${index}`}>
-                    <ul
-                      className="space-y-2 text-muted-foreground"
-                      id={`gafjyt_${index}`}
-                    >
-                      {capability.examples.map((example, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center gap-2"
-                          id={`msm9av_${index}`}
-                        >
-                          <Brain
-                            className="h-4 w-4 text-primary"
-                            id={`4tevvg_${index}`}
-                          />
+                {expandedCapability === index && (
+                  <ul className="mt-4 space-y-2" id={`x0qup5_${index}`}>
+                    {capability.items.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-muted-foreground"
+                        id={`skoqi0_${index}`}
+                      >
+                        <div
+                          className="h-1.5 w-1.5 rounded-full bg-primary/50"
+                          id={`yov29l_${index}`}
+                        />
 
-                          {example}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="text-center mt-12">
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button
-              size="lg"
-              className="rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+        {/* Video Showcase Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight mb-6">
+            Examples of AI Solutions We've Built Previously
+          </h2>
+        </div>
+
+        <Card className="w-full max-w-[1200px] mx-auto overflow-hidden">
+          {/* Video Selection Buttons */}
+          <div className="flex flex-wrap gap-2 p-4 border-b">
+            {videoShowcase.map((video, index) => (
+              <Button
+                key={index}
+                variant={activeVideo === index ? "default" : "outline"}
+                onClick={() => setActiveVideo(index)}
+                className="flex-1"
+                id={`sskeqp_${index}`}
+              >
+                {video.title}
+              </Button>
+            ))}
+          </div>
+
+          {/* Description */}
+          <div className="p-6 bg-muted/50">
+            <p className="text-lg text-muted-foreground">
+              {videoShowcase[activeVideo].description}
+            </p>
+          </div>
+
+          {/* Video container */}
+          <div className="relative aspect-video bg-accent">
+            <video
+              key={activeVideo}
+              className="w-full h-full object-cover scale-x-[1.01]"
+              autoPlay
+              muted
+              // controls
+              // poster={`https://picsum.photos/seed/${activeVideo}/1920/1080`}
             >
-              Learn About What&apos;s Possible
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full"
-              onClick={() => setIsVoiceModalOpen(true)}
-            >
-              Try Our Voice Agent
-            </Button>
+              <source
+                src={videoShowcase[activeVideo].videoUrl}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            {/* <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+              <PlayIcon className="w-16 h-16 text-white" />
+            </div> */}
+          </div>
+        </Card>
+
+        {/* AI Action Section */}
+        <div className="mt-8">
+          <div className="relative bg-primary/10 rounded-3xl p-8">
+            <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
+                Try Our AI And Learn More About Lumio
+              </h2>
+              <div className="flex flex-wrap justify-center gap-6">
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-2xl shadow-lg transition-transform hover:scale-105"
+                  size="lg"
+                  onClick={() => setIsVoiceModalOpen(true)}
+                >
+                  <Mic className="mr-3 h-5 w-5" />
+                  Try Our Voice Agent
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 rounded-2xl shadow-lg transition-transform hover:scale-105"
+                  size="lg"
+                >
+                  <MessageSquare className="mr-3 h-5 w-5" />
+                  Ask Our AI Any Questions
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
