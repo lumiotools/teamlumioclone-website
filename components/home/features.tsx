@@ -97,7 +97,7 @@ export function Features() {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background" id="features">
       <div className="container px-4">
         {/* New Capabilities Section */}
         <div className="mb-20">
@@ -182,13 +182,13 @@ export function Features() {
         </div>
 
         {/* Video Showcase Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl font-bold tracking-tight mb-6">
             Examples of AI Solutions We've Built Previously
           </h2>
         </div>
 
-        <Card className="w-full max-w-[1200px] mx-auto overflow-hidden">
+        <Card className="w-full max-w-[1000px] mx-auto overflow-hidden">
           {/* Video Selection Buttons */}
           <div className="flex flex-wrap gap-2 p-4 border-b">
             {videoShowcase.map((video, index) => (
@@ -205,17 +205,17 @@ export function Features() {
           </div>
 
           {/* Description */}
-          <div className="p-6 bg-muted/50">
-            <p className="text-lg text-muted-foreground">
+          <div className="px-6 py-3 bg-muted/50">
+            <p className="text-sm text-muted-foreground">
               {videoShowcase[activeVideo].description}
             </p>
           </div>
 
           {/* Video container */}
-          <div className="relative aspect-video bg-accent">
+          <div className="relative bg-accent">
             <video
               key={activeVideo}
-              className="w-full h-full object-cover scale-x-[1.01]"
+              className="w-full aspect-video object-cover scale-x-[1.01]"
               autoPlay
               muted
               // controls

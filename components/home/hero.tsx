@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
-import { VoiceAgentModal } from "@/components/voice-agent-modal";
+import { VoiceAgentModal } from "@/components/home/voice-agent-modal";
 
 export function Hero() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -37,7 +37,7 @@ export function Hero() {
           <div className="flex flex-col items-center gap-4 w-full">
             <Button size="lg" className="w-[200px]">
             Get A Free AI Audit
-              <ArrowRightIcon className="ml-2 h-4 w-4" />
+              <ArrowRightIcon className="ml-1 h-4 w-4" />
             </Button>
             {/* <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="outline" className="w-full sm:w-auto">

@@ -88,14 +88,14 @@ export function AboutUs() {
     <section className="py-20 bg-accent/50" id="about">
       <div className="container px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight mb-6">About Us</h2>
-            <p className="text-lg text-muted-foreground mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">About Us</h2>
+            <p className="text-lg text-muted-foreground mb-8">
               Founded by Kush Jain and Ananth Subramanya, our team brings
               together expert engineers and strategists from top engineering
               institutions and leading tech giants such as Intuit, Cisco,
               Amazon, and Microsoft. We&apos;ve been recognized by Forbes 30 Under 30
-              and the CES Innovation Award for our groundbreaking AI solutions.
+              and CES Innovation Award for our groundbreaking AI solutions.
               Whether you need smarter operations, AI-powered customer
               interactions, or seamless integrations, we make AI accessible,
               practical, and built for growth.
@@ -104,7 +104,7 @@ export function AboutUs() {
 
           <Card className="bg-background mb-8">
             <CardContent className="p-8">
-              <h3 className="text-lg font-semibold mb-9 text-center">
+              <h3 className="text-lg font-semibold mb-7 text-center">
                 Our Team&apos;s Experience
               </h3>
               <div className="gri grid-cols-2 md:grid-cols-4 flex flex-wrap gap-10 gap-y-8 items-center justify-center">
@@ -128,7 +128,7 @@ export function AboutUs() {
 
           <Card className="bg-background">
             <CardContent className="p-8">
-              <h3 className="text-lg font-semibold mb-6 text-center">
+              <h3 className="text-lg font-semibold mb-4 text-center">
                 Recognition & Awards
               </h3>
               <div className="flex flex-wrap  gap-10 gap-y-4 items-center justify-center">

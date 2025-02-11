@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
-import { VoiceAgentModal } from "@/components/voice-agent-modal";
+import { VoiceAgentModal } from "@/components/home/voice-agent-modal";
 
 export function CTA() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -40,7 +40,7 @@ export function CTA() {
                 className="w-[200px] bg-white text-primary hover:bg-white/90"
               >
                 Get A Free AI Audit
-                <ArrowRightIcon className="ml-2 h-4 w-4" />
+                <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
               {/* <div className="flex flex-col sm:flex-row gap-4">
                 <Button

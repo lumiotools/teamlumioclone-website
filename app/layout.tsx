@@ -3,6 +3,8 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import Head from "next/head";
+import HeadScripts, { BodyScripts } from "@/components/scripts";
 
 const dmSans = DM_Sans({
   // variable: "--font-dm-sans",
@@ -22,10 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <HeadScripts />
+      </head>
       <body className={`${dmSans.className} antialiased`}>
         <Header />
         {children}
         <Footer />
+        <BodyScripts />
       </body>
     </html>
   );

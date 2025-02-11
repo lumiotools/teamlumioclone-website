@@ -1,13 +1,13 @@
-import { AboutUs } from "@/components/about-us";
-import { Benefits } from "@/components/benefits";
-import ChatBot from "@/components/chat-bot";
-import { CTA } from "@/components/cta";
-import { Features } from "@/components/features";
-import { Hero } from "@/components/hero";
-import { HowItWorks } from "@/components/how-it-works";
-import { Newsletter } from "@/components/newsletter";
-import { TechPlatforms } from "@/components/tech-platforms";
-import { Testimonials } from "@/components/testimonials";
+import { AboutUs } from "@/components/home/about-us";
+import { Benefits } from "@/components/home/benefits";
+import ChatBot from "@/components/home/chat-bot";
+import { CTA } from "@/components/home/cta";
+import { Features } from "@/components/home/features";
+import { Hero } from "@/components/home/hero";
+import { HowItWorks } from "@/components/home/how-it-works";
+import { Newsletter } from "@/components/home/newsletter";
+import { TechPlatforms } from "@/components/home/tech-platforms";
+import { Testimonials } from "@/components/home/testimonials";
 import React from "react";
 
 const HomePage = () => {

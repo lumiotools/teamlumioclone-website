@@ -1,14 +1,22 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { PlayIcon } from "lucide-react";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
 
 export function Testimonials() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const testimonials = [
+    {
+      quote:
+        "The Lumio team has been incredibly helpful. They took the time to go deep and understand our business requirements. Our project lead was clearly an expert in his domain and was incredibly professional and good at communicating. I'm happy to recommend Lumio to others!",
+      author: "Abhiudai Mishra",
+      position: "CEO",
+      company: "Mosa",
+      image: "/images/Mosa.avif",
+    },
     {
       quote:
         "Kush was an absolute pleasure to work with. They were quick to respond, clear in their communication and demonstrated great technical ability. They went above and beyond with my project and delivered on all of their promises. I look forward to working with Lumio again.",
@@ -17,14 +25,6 @@ export function Testimonials() {
       company: "Hammerberg & Associates, Inc.",
       image: "/images/Jeff Hammerberg.avif",
       video: "/videos/testimonial-jeff.mp4",
-    },
-    {
-      quote:
-        "The Lumio team has been incredibly helpful. They took the time to go deep and understand our business requirements. Our project lead was clearly an expert in his domain and was incredibly professional and good at communicating. I'm happy to recommend Lumio to others!",
-      author: "Abhiudai Mishra",
-      position: "CEO",
-      company: "Mosa",
-      image: "/images/Mosa.avif",
     },
     {
       quote:
@@ -68,7 +68,7 @@ export function Testimonials() {
     >
       <section className="py-20 bg-accent/50" id="testimonials">
         <div className="container px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
               Trusted by Small to Medium Sized Businesses like Yours
             </h2>
@@ -81,6 +81,11 @@ export function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-background flex flex-col h-full">
                 <CardContent className="pt-6 flex flex-col h-full">
+                  <div className="flex flex-col flex-grow">
+                    <p className="text-lg mb-6">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+                  </div>
                   {testimonial.video && (
                     <div
                       className="flex justify-center mb-6"
@@ -88,7 +93,7 @@ export function Testimonials() {
                     >
                       <Button
                         variant="outline"
-                        className="flex items-center gap-2"
+                        className="w-full flex items-center gap-2 !bg-[#e5e4ec8a]"
                         size="lg"
                         id={`p3ge29_${index}`}
                         onClick={() => setActiveVideo(testimonial.video)}
@@ -98,11 +103,6 @@ export function Testimonials() {
                       </Button>
                     </div>
                   )}
-                  <div className="flex flex-col flex-grow">
-                    <p className="text-lg mb-6">
-                      &quot;{testimonial.quote}&quot;
-                    </p>
-                  </div>
                   <div className="flex items-center gap-4 mt-auto">
                     <img
                       src={testimonial.image || "/placeholder.svg"}
@@ -125,7 +125,7 @@ export function Testimonials() {
           </div>
         </div>
       </section>
-      <DialogContent className="max-w-screen-sm aspect-video p-0 border-none !text-white [&>button>svg]:!size-6">
+      <DialogContent className="max-w-screen-lg aspect-video p-0 border-none !text-white [&>button>svg]:!size-6">
         <DialogTitle className="hidden"></DialogTitle>
         <video
           src={activeVideo as string}
