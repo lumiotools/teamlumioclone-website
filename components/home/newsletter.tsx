@@ -57,7 +57,7 @@ export function Newsletter() {
               ease: "easeOut",
             }}
             viewport={{ once: true }} className="w-full max-w-md mt-4">
-              <form className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
                   placeholder="Enter your email"
@@ -67,7 +67,7 @@ export function Newsletter() {
                 <Button type="submit" className="whitespace-nowrap">
                   Subscribe
                 </Button>
-              </form>
+              </div>
               <p className="text-sm text-muted-foreground mt-3">
                 We respect your privacy. Unsubscribe at any time.
               </p>

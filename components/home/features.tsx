@@ -18,10 +18,16 @@ import {
 import { VoiceAgentModal } from "./voice-agent-modal";
 import { motion } from "framer-motion";
 
-export function Features() {
+export function Features({
+  isChatBotOpen,
+  setIsChatBotOpen,
+}: {
+  isChatBotOpen: boolean;
+  setIsChatBotOpen: (isOpen: boolean) => void;
+}) {
   const [activeVideo, setActiveVideo] = useState(0);
   const [expandedCapability, setExpandedCapability] = useState<number | null>(
-    0
+    null
   );
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
@@ -94,8 +100,6 @@ export function Features() {
     },
   ];
 
-  const MotionCard = motion(Card);
-
   return (
     <section className="py-20 bg-background" id="features">
       <div className="container px-4">
@@ -125,14 +129,14 @@ export function Features() {
               <span className="text-primary">Our AI Solution</span>
             </h2>
             <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-              Describe your company&apos;s unique workflows and challenges, and well
-              develop a custom AI agent that perfectly matches your operational
-              needs.
+              Describe your company&apos;s unique workflows and challenges, and
+              well develop a custom AI agent that perfectly matches your
+              operational needs.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {capabilities.map((capability, index) => (
-              <MotionCard
+              <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{
                   opacity: 1,
@@ -145,61 +149,74 @@ export function Features() {
                 }}
                 viewport={{ once: true }}
                 key={index}
-                className="p-6 hover:bg-accent/50 transition-colors cursor-pointer"
+                id={`lycri3_${index}`}
                 onClick={() =>
                   setExpandedCapability(
                     expandedCapability === index ? null : index
                   )
                 }
-                id={`lycri3_${index}`}
               >
-                <div className="flex items-center gap-4" id={`7xaokg_${index}`}>
+                <Card className="p-6 hover:bg-accent/50 transition-colors cursor-pointer">
                   <div
-                    className="p-2 rounded-lg bg-primary/10"
-                    id={`ufl9r4_${index}`}
+                    className="flex items-center gap-4"
+                    id={`7xaokg_${index}`}
                   >
-                    <capability.icon
-                      className="h-6 w-6 text-primary"
-                      id={`92iteu_${index}`}
-                    />
+                    <div
+                      className="p-2 rounded-lg bg-primary/10"
+                      id={`ufl9r4_${index}`}
+                    >
+                      <capability.icon
+                        className="h-6 w-6 text-primary"
+                        id={`92iteu_${index}`}
+                      />
+                    </div>
+                    <h3
+                      className="text-xl font-semibold flex-1"
+                      id={`ljka2a_${index}`}
+                    >
+                      {capability.title}
+                    </h3>
+                    {expandedCapability === index ? (
+                      <ChevronDownIcon
+                        className="h-5 w-5 text-muted-foreground"
+                        id={`2soc4a_${index}`}
+                      />
+                    ) : (
+                      <ChevronRightIcon
+                        className="h-5 w-5 text-muted-foreground"
+                        id={`2soc4a_${index}`}
+                      />
+                    )}
                   </div>
-                  <h3
-                    className="text-xl font-semibold flex-1"
-                    id={`ljka2a_${index}`}
-                  >
-                    {capability.title}
-                  </h3>
-                  {expandedCapability === index ? (
-                    <ChevronDownIcon
-                      className="h-5 w-5 text-muted-foreground"
-                      id={`2soc4a_${index}`}
-                    />
-                  ) : (
-                    <ChevronRightIcon
-                      className="h-5 w-5 text-muted-foreground"
-                      id={`2soc4a_${index}`}
-                    />
-                  )}
-                </div>
-                {expandedCapability === index && (
-                  <ul className="mt-4 space-y-2" id={`x0qup5_${index}`}>
-                    {capability.items.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-2 text-muted-foreground"
-                        id={`skoqi0_${index}`}
-                      >
-                        <div
-                          className="h-1.5 w-1.5 rounded-full bg-primary/50"
-                          id={`yov29l_${index}`}
-                        />
+                  {expandedCapability === index && (
+                    <motion.ul
+                      className="mt-4 space-y-2"
+                      id={`x0qup5_${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeOut",
+                      }}
+                    >
+                      {capability.items.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-muted-foreground"
+                          id={`skoqi0_${index}`}
+                        >
+                          <div
+                            className="h-1.5 w-1.5 rounded-full bg-primary/50"
+                            id={`yov29l_${index}`}
+                          />
 
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </MotionCard>
+                          {item}
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -223,7 +240,7 @@ export function Features() {
           </motion.h2>
         </div>
 
-        <MotionCard
+        <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{
             opacity: 1,
@@ -234,51 +251,53 @@ export function Features() {
             ease: "easeOut",
           }}
           viewport={{ once: true }}
-          className="w-full max-w-[1000px] mx-auto overflow-hidden"
         >
-          {/* Video Selection Buttons */}
-          <div className="flex flex-wrap gap-2 p-4 border-b">
-            {videoShowcase.map((video, index) => (
-              <Button
-                key={index}
-                variant={activeVideo === index ? "default" : "outline"}
-                onClick={() => setActiveVideo(index)}
-                className="flex-1"
-                id={`sskeqp_${index}`}
+          <Card className="w-auto max-w-[960px] mx-auto overflow-hidden">
+            {/* Video Selection Buttons */}
+            <div className="flex flex-wrap gap-2 p-4 border-b">
+              {videoShowcase.map((video, index) => (
+                <Button
+                  key={index}
+                  variant={activeVideo === index ? "default" : "outline"}
+                  onClick={() => setActiveVideo(index)}
+                  className="flex-1"
+                  id={`sskeqp_${index}`}
+                >
+                  {video.title}
+                </Button>
+              ))}
+            </div>
+
+            {/* Description */}
+            <div className="px-6 py-3 bg-muted/50">
+              <p className="text-sm text-muted-foreground">
+                {videoShowcase[activeVideo].description}
+              </p>
+            </div>
+
+            {/* Video container */}
+            <div className="relative bg-accent">
+              <video
+                key={activeVideo}
+                className="w-full aspect-video object-cover scale-x-[1.01]"
+                autoPlay
+                muted
+                loop
+                // controls
+                // poster={`https://picsum.photos/seed/${activeVideo}/1920/1080`}
               >
-                {video.title}
-              </Button>
-            ))}
-          </div>
-
-          {/* Description */}
-          <div className="px-6 py-3 bg-muted/50">
-            <p className="text-sm text-muted-foreground">
-              {videoShowcase[activeVideo].description}
-            </p>
-          </div>
-
-          {/* Video container */}
-          <div className="relative bg-accent">
-            <video
-              key={activeVideo}
-              className="w-full aspect-video object-cover scale-x-[1.01]"
-              autoPlay
-              muted
-              // controls
-              // poster={`https://picsum.photos/seed/${activeVideo}/1920/1080`}
-            >
-              <source
-                src={videoShowcase[activeVideo].videoUrl}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-            {/* <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                <source
+                  src={videoShowcase[activeVideo].videoUrl}
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              {/* <div className="absolute inset-0 flex items-center justify-center bg-black/50">
               <PlayIcon className="w-16 h-16 text-white" />
             </div> */}
-          </div>
-        </MotionCard>
+            </div>
+          </Card>
+        </motion.div>
 
         {/* AI Action Section */}
         <div className="mt-8">
@@ -312,6 +331,7 @@ export function Features() {
                   variant="outline"
                   className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 rounded-2xl shadow-lg transition-transform hover:scale-105"
                   size="lg"
+                  onClick={() => setIsChatBotOpen(!isChatBotOpen)}
                 >
                   <MessageSquare className="mr-3 h-5 w-5" />
                   Ask Our AI Any Questions

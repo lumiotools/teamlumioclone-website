@@ -12,8 +12,13 @@ import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
 import { sendHistory } from "@/utils/reportHistory";
 
-export default function ChatBot() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function ChatBot({
+  isChatBotOpen: isOpen,
+  setIsChatBotOpen: setIsOpen,
+}: {
+  isChatBotOpen: boolean;
+  setIsChatBotOpen: (isOpen: boolean) => void;
+}) {
   const [showWelcome, setShowWelcome] = useState(true);
   const [messages, setMessages] = useState([
     {

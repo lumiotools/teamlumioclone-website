@@ -71,7 +71,12 @@ export function Header() {
           </nav>
         </div>
         <div className="hidden md:flex items-center gap-4">
-          <Button>Let&apos;s Talk</Button>
+          <Link
+            href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
+            target="_blank"
+          >
+            <Button>Let&apos;s Talk</Button>
+          </Link>
         </div>
         <button
           className="md:hidden"

@@ -84,25 +84,25 @@ export default function Blogs() {
   const handleBlogClick: HandleBlogClick = (blogId) => {
     console.log(blogId);
     // setSelectedBlogId(blogId);
-    router.push(`/blogs/${blogId}`)
+    router.push(`/blogs/${blogId}`);
   };
-
-  const MotionCard = motion(Card);
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container px-4 py-20">
-        <motion.div initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Blogs
           </h1>
@@ -113,50 +113,52 @@ export default function Blogs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <MotionCard initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.1,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
               key={post.id}
-              className="overflow-hidden border-none shadow-none cursor-pointer group"
               onClick={() => handleBlogClick(post.id)}
               id={`bqigeb_${index}`}
             >
-              <CardContent className="p-0" id={`lcdfb0_${index}`}>
-                <div
-                  className="relative  overflow-hidden rounded-lg mb-4"
-                  id={`jtmqzq_${index}`}
-                >
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="object-cover w-full lg:h-[350px] h-[250px] transition-transform duration-300 group-hover:scale-105"
-                    id={`gogf6t_${index}`}
-                  />
-                </div>
-                <div className="space-y-2" id={`t2exey_${index}`}>
-                  <p
-                    className="text-sm text-muted-foreground"
-                    id={`2j8nwh_${index}`}
+              <Card className="overflow-hidden border-none shadow-none cursor-pointer group">
+                <CardContent className="p-0" id={`lcdfb0_${index}`}>
+                  <div
+                    className="relative  overflow-hidden rounded-lg mb-4"
+                    id={`jtmqzq_${index}`}
                   >
-                    {post.date}
-                  </p>
-                  <h2
-                    className="text-2xl font-semibold leading-tight group-hover:text-primary transition-colors"
-                    id={`rn36yu_${index}`}
-                  >
-                    {post.title}
-                  </h2>
-                </div>
-              </CardContent>
-            </MotionCard>
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="object-cover w-full lg:h-[350px] h-[250px] transition-transform duration-300 group-hover:scale-105"
+                      id={`gogf6t_${index}`}
+                    />
+                  </div>
+                  <div className="space-y-2" id={`t2exey_${index}`}>
+                    <p
+                      className="text-sm text-muted-foreground"
+                      id={`2j8nwh_${index}`}
+                    >
+                      {post.date}
+                    </p>
+                    <h2
+                      className="text-2xl font-semibold leading-tight group-hover:text-primary transition-colors"
+                      id={`rn36yu_${index}`}
+                    >
+                      {post.title}
+                    </h2>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

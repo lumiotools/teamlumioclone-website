@@ -35,7 +35,7 @@ export function Footer() {
     resources: [
       {
         label: "Contact Us",
-        href: "/",
+        href: "mailto:contact@teamlumio.ai",
       },
       {
         label: "Privacy Policy",
@@ -136,6 +136,9 @@ export function Footer() {
                         onClick={(e) => handleLinkClick(link.href, e, router)}
                         className="text-muted-foreground hover:text-foreground"
                         id={`i0ciem_${index}`}
+                        {...({
+                          target: link.href.startsWith("mailto") && "_blank",
+                        } as any)}
                       >
                         {link.label}
                       </Link>
@@ -144,7 +147,7 @@ export function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-4">Featured Stories</h3>
+                <h3 className="font-semibold mb-4">Featured AI Stories</h3>
                 <ul className="space-y-3">
                   {links.featured.map((link, index) => (
                     <li key={link.href} id={`5n230i_${index}`}>

@@ -62,8 +62,6 @@ export function Testimonials() {
     },
   ];
 
-  const MotionCard = motion(Card);
-
   return (
     <Dialog
       open={!!activeVideo}
@@ -94,7 +92,7 @@ export function Testimonials() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <MotionCard
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{
@@ -103,53 +101,57 @@ export function Testimonials() {
                 }}
                 transition={{
                   duration: 0.5,
-                  delay: 0.1 * index,
+                  delay: 0.2 * index,
                   ease: "easeOut",
                 }}
                 viewport={{ once: true }}
-                className="bg-background flex flex-col h-full"
               >
-                <CardContent className="pt-6 flex flex-col h-full">
-                  <div className="flex flex-col flex-grow">
-                    <p className="text-lg mb-6">
-                      &quot;{testimonial.quote}&quot;
-                    </p>
-                  </div>
-                  {testimonial.video && (
-                    <div
-                      className="flex justify-center mb-6"
-                      id={`4b4ub6_${index}`}
-                    >
-                      <Button
-                        variant="outline"
-                        className="w-full flex items-center gap-2 !bg-[#e5e4ec8a]"
-                        size="lg"
-                        id={`p3ge29_${index}`}
-                        onClick={() => setActiveVideo(testimonial.video)}
-                      >
-                        <PlayIcon className="h-5 w-5" id={`8ahb7q_${index}`} />
-                        Watch Testimonial Video
-                      </Button>
-                    </div>
-                  )}
-                  <div className="flex items-center gap-4 mt-auto">
-                    <img
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.author || testimonial.company}
-                      className="h-12 w-12 rounded-full"
-                    />
-                    <div>
-                      {testimonial.author && (
-                        <p className="font-semibold">{testimonial.author}</p>
-                      )}
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.position && `${testimonial.position}, `}
-                        {testimonial.company}
+                <Card className="bg-background flex flex-col h-full">
+                  <CardContent className="pt-6 flex flex-col h-full">
+                    <div className="flex flex-col flex-grow">
+                      <p className="text-lg mb-6">
+                        &quot;{testimonial.quote}&quot;
                       </p>
                     </div>
-                  </div>
-                </CardContent>
-              </MotionCard>
+                    {testimonial.video && (
+                      <div
+                        className="flex justify-center mb-6"
+                        id={`4b4ub6_${index}`}
+                      >
+                        <Button
+                          variant="outline"
+                          className="w-full flex items-center gap-2 !bg-[#e5e4ec8a]"
+                          size="lg"
+                          id={`p3ge29_${index}`}
+                          onClick={() => setActiveVideo(testimonial.video)}
+                        >
+                          <PlayIcon
+                            className="h-5 w-5"
+                            id={`8ahb7q_${index}`}
+                          />
+                          Watch Testimonial Video
+                        </Button>
+                      </div>
+                    )}
+                    <div className="flex items-center gap-4 mt-auto">
+                      <img
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.author || testimonial.company}
+                        className="h-12 w-12 rounded-full"
+                      />
+                      <div>
+                        {testimonial.author && (
+                          <p className="font-semibold">{testimonial.author}</p>
+                        )}
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.position && `${testimonial.position}, `}
+                          {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>{" "}
+              </motion.div>
             ))}
           </div>
         </div>

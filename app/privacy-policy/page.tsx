@@ -1,28 +1,28 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">
-            Privacy Policy
-          </h1>
+          <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
           <p className="text-muted-foreground mb-8">
-            Effective Date: January 15, 2024
+            Effective Date: February 11, 2025
           </p>
 
           <div className="space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                1. Introduction
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
               <p className="text-muted-foreground">
-                Welcome to Lumio AI (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are
-                committed to safeguarding your privacy and ensuring the security
-                of your personal information. This Privacy Policy outlines how
-                we collect, use, disclose, and protect your data when you
-                interact with our website and services.
+                Welcome to Lumio AI (&quot;Company,&quot; &quot;we,&quot;
+                &quot;our,&quot; or &quot;us&quot;). We are committed to
+                safeguarding your privacy and ensuring the security of your
+                personal information. This Privacy Policy outlines how we
+                collect, use, disclose, and protect your data when you interact
+                with our website and services.
               </p>
             </section>
 
@@ -41,9 +41,7 @@ export default function PrivacyPolicy() {
                   subscribing to our services.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Usage Data:
-                  </strong>{" "}
+                  <strong className="text-foreground">Usage Data:</strong>{" "}
                   Information about your interactions with our website,
                   including IP addresses, browser types, pages visited, and the
                   duration of visits, may be collected to enhance user
@@ -65,9 +63,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-semibold mb-4">
                 3. How We Use Your Information
               </h2>
-              <ul
-                className="list-disc list-inside space-y-2 text-muted-foreground"
-              >
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                 <li>
                   To provide and improve our AI-driven services tailored to your
                   business needs.
@@ -102,9 +98,7 @@ export default function PrivacyPolicy() {
                   use it solely for the purposes we specify.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Legal Compliance:
-                  </strong>{" "}
+                  <strong className="text-foreground">Legal Compliance:</strong>{" "}
                   We may disclose your information if required by law,
                   regulation, or legal process, or to protect the rights,
                   property, or safety of Lumio AI, our clients, or others.
@@ -113,9 +107,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                5. Data Security
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">5. Data Security</h2>
               <p className="text-muted-foreground">
                 We implement industry-standard security measures to protect your
                 personal information from unauthorized access, alteration,
@@ -126,16 +118,12 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                6. Your Rights
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">6. Your Rights</h2>
               <p className="text-muted-foreground mb-4">
                 Depending on your jurisdiction, you may have the following
                 rights regarding your personal data:
               </p>
-              <ul
-                className="list-disc list-inside space-y-2 text-muted-foreground"
-              >
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                 <li>
                   Access: Request a copy of the personal data we hold about you.
                 </li>
@@ -183,12 +171,13 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                9. Contact Us
-              </h2>
-              <p className="text-muted-foreground">
+              <h2 className="text-2xl font-semibold mb-4">9. Contact Us</h2>
+              <p className="text-muted-foreground mr-2">
                 If you have any questions or concerns about this Privacy Policy
-                or our data practices, please contact us at privacy@lumio.ai
+                or our data practices, please contact us at{" "}
+                <Link href="mailto:contact@teamlumio.ai" target="_blank">
+                  contact@teamlumio.ai
+                </Link>
               </p>
             </section>
           </div>

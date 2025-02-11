@@ -10,7 +10,8 @@ import {
   CrownIcon,
   TrendingUpIcon,
 } from "lucide-react";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Careers() {
   const cultureValues = [
@@ -75,14 +76,13 @@ export default function Careers() {
     },
   ];
 
-  const MotionCard = motion(Card);
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container px-4">
-          <motion.div initial={{ opacity: 0, y: -100 }}
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
             whileInView={{
               opacity: 1,
               y: 0,
@@ -91,10 +91,10 @@ export default function Careers() {
               duration: 0.5,
               ease: "easeOut",
             }}
-            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
-            <h1
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
-            >
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               Why Join Us?
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -103,42 +103,43 @@ export default function Careers() {
           </motion.div>
 
           {/* Benefits Grid */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
             {benefits.map((benefit, index) => (
-              <MotionCard initial={{ opacity: 0, scale: 0 }}
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay:index * 0.1,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
                 key={index}
-                className="bg-card hover:bg-accent/50 transition-colors"
                 id={`p4bqsf_${index}`}
               >
-                <CardContent className="p-6" id={`9heqsn_${index}`}>
-                  <h3
-                    className="text-2xl font-bold mb-4"
-                    id={`ahjb79_${index}`}
-                  >
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground" id={`hkwu1b_${index}`}>
-                    {benefit.description}
-                  </p>
-                </CardContent>
-              </MotionCard>
+                <Card className="bg-card hover:bg-accent/50 transition-colors">
+                  <CardContent className="p-6" id={`9heqsn_${index}`}>
+                    <h3
+                      className="text-2xl font-bold mb-4"
+                      id={`ahjb79_${index}`}
+                    >
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground" id={`hkwu1b_${index}`}>
+                      {benefit.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
           {/* Culture Section */}
-          <motion.div initial={{ opacity: 0, y: 100 }}
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{
               opacity: 1,
               y: 0,
@@ -147,58 +148,58 @@ export default function Careers() {
               duration: 0.5,
               ease: "easeOut",
             }}
-            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              Lumio AI&apos;s Culture
-            </h2>
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4">Lumio AI&apos;s Culture</h2>
             <p className="text-lg text-muted-foreground">
               Read about Lumio AI&apos;s trust, ownership, and results-driven
               culture.
             </p>
           </motion.div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {cultureValues.map((value, index) => (
-              <MotionCard initial={{ opacity: 0, scale: 0 }}
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay:index * 0.1,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.12,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
                 key={index}
-                className="bg-card hover:bg-accent/50 transition-colors"
                 id={`rwy7cs_${index}`}
               >
-                <CardContent className="p-6" id={`p31m7j_${index}`}>
-                  <div
-                    className="flex items-center gap-4 mb-4"
-                    id={`nxq2kw_${index}`}
-                  >
+                <Card className="bg-card hover:bg-accent/50 transition-colors">
+                  <CardContent className="p-6" id={`p31m7j_${index}`}>
                     <div
-                      className="p-2 rounded-lg bg-primary/10"
-                      id={`taj7ia_${index}`}
+                      className="flex items-center gap-4 mb-4"
+                      id={`nxq2kw_${index}`}
                     >
-                      <value.icon
-                        className="h-6 w-6 text-primary"
-                        id={`28105f_${index}`}
-                      />
+                      <div
+                        className="p-2 rounded-lg bg-primary/10"
+                        id={`taj7ia_${index}`}
+                      >
+                        <value.icon
+                          className="h-6 w-6 text-primary"
+                          id={`28105f_${index}`}
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold" id={`ublm89_${index}`}>
+                        {value.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl font-bold" id={`ublm89_${index}`}>
-                      {value.title}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground" id={`pnwe6c_${index}`}>
-                    {value.description}
-                  </p>
-                </CardContent>
-              </MotionCard>
+                    <p className="text-muted-foreground" id={`pnwe6c_${index}`}>
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -206,12 +207,17 @@ export default function Careers() {
 
       {/* Fixed Apply Button - Positioned to the left of the ChatBot */}
       <div className="fixed bottom-8 right-24 z-50">
-        <Button
-          size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfBApUN0uIRXAwjE43RVa2c8KIjqZWDRTAZkMfOS3qRHLqMEw/viewform?usp=sf_link"
+          target="_blank"
         >
-          Apply Now
-        </Button>
+          <Button
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+          >
+            Apply Now
+          </Button>
+        </Link>
       </div>
     </div>
   );

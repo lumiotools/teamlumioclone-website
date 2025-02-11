@@ -1,15 +1,16 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">
-            Terms of Service
-          </h1>
+          <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
           <p className="text-muted-foreground mb-8">
-            Effective Date: January 15, 2024
+            Effective Date: February 11, 2025
           </p>
 
           <div className="space-y-8">
@@ -19,10 +20,11 @@ export default function TermsOfService() {
               </h2>
               <p className="text-muted-foreground">
                 By accessing or using the services provided by Lumio AI
-                (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you (&quot;User,&quot; &quot;you,&quot; or
-                &quot;your&quot;) agree to comply with and be bound by these Terms of
-                Service. If you do not agree with these terms, please do not use
-                our services.
+                (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or
+                &quot;us&quot;), you (&quot;User,&quot; &quot;you,&quot; or
+                &quot;your&quot;) agree to comply with and be bound by these
+                Terms of Service. If you do not agree with these terms, please
+                do not use our services.
               </p>
             </section>
 
@@ -81,17 +83,13 @@ export default function TermsOfService() {
                   fixed pricing as outlined in individual agreements.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Payment Terms:
-                  </strong>{" "}
+                  <strong className="text-foreground">Payment Terms:</strong>{" "}
                   Payments are due as specified in your project agreement.
                   Failure to make timely payments may result in suspension or
                   termination of services.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Pricing Changes:
-                  </strong>{" "}
+                  <strong className="text-foreground">Pricing Changes:</strong>{" "}
                   We reserve the right to modify our pricing structure with
                   prior notice to you.
                 </p>
@@ -112,20 +110,14 @@ export default function TermsOfService() {
                   applicable laws.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    User License:
-                  </strong>{" "}
-                  We grant you a limited, non-exclusive, non-transferable
-                  license to use our services for your internal business
-                  purposes.
+                  <strong className="text-foreground">User License:</strong> We
+                  grant you a limited, non-exclusive, non-transferable license
+                  to use our services for your internal business purposes.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Restrictions:
-                  </strong>{" "}
-                  You may not reproduce, distribute, modify, or create
-                  derivative works of our materials without our prior written
-                  consent.
+                  <strong className="text-foreground">Restrictions:</strong> You
+                  may not reproduce, distribute, modify, or create derivative
+                  works of our materials without our prior written consent.
                 </p>
               </div>
             </section>
@@ -136,17 +128,13 @@ export default function TermsOfService() {
               </h2>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    No Warranty:
-                  </strong>{" "}
-                  Our services are provided &quot;as is&quot; without any warranties,
-                  express or implied.
+                  <strong className="text-foreground">No Warranty:</strong> Our
+                  services are provided &quot;as is&quot; without any
+                  warranties, express or implied.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">
-                    Limitation:
-                  </strong>{" "}
-                  To the fullest extent permitted by law, Lumio AI shall not be
+                  <strong className="text-foreground">Limitation:</strong> To
+                  the fullest extent permitted by law, Lumio AI shall not be
                   liable for any indirect, incidental, special, or consequential
                   damages arising from your use of our services.
                 </p>
@@ -163,9 +151,7 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                7. Termination
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">7. Termination</h2>
               <p className="text-muted-foreground">
                 We reserve the right to suspend or terminate your access to our
                 services at our sole discretion, without notice, for conduct
@@ -175,9 +161,7 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                8. Governing Law
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
               <p className="text-muted-foreground">
                 These Terms of Service are governed by and construed in
                 accordance with the laws of California, United States, without
@@ -201,12 +185,13 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">
-                10. Contact Us
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
               <p className="text-muted-foreground">
                 If you have any questions about these Terms of Service, please
-                contact us at legal@lumio.ai
+                contact us at{" "}
+                <Link href="mailto:contact@teamlumio.ai" target="_blank">
+                  contact@teamlumio.ai
+                </Link>
               </p>
             </section>
           </div>
