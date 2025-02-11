@@ -128,7 +128,7 @@ export function AboutUs() {
 
           <Card className="bg-background">
             <CardContent className="p-8">
-              <h3 className="text-lg font-semibold mb-12 text-center">
+              <h3 className="text-lg font-semibold mb-10 text-center">
                 Recognition & Awards
               </h3>
               <div className="flex flex-wrap  gap-10 items-center justify-center">
