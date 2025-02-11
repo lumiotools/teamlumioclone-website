@@ -1,7 +1,23 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
+import { PlayIcon } from "lucide-react";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 
 export function Testimonials() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   const testimonials = [
+    {
+      quote:
+        "Kush was an absolute pleasure to work with. They were quick to respond, clear in their communication and demonstrated great technical ability. They went above and beyond with my project and delivered on all of their promises. I look forward to working with Lumio again.",
+      author: "Jeff Hammerberg",
+      position: "Founder & President",
+      company: "Hammerberg & Associates, Inc.",
+      image: "/images/Jeff Hammerberg.avif",
+      video: "/videos/testimonial-jeff.mp4",
+    },
     {
       quote:
         "The Lumio team has been incredibly helpful. They took the time to go deep and understand our business requirements. Our project lead was clearly an expert in his domain and was incredibly professional and good at communicating. I'm happy to recommend Lumio to others!",
@@ -34,64 +50,91 @@ export function Testimonials() {
       company: "A shipping company based in California",
       image: "/images/Real estate company in dubai.avif",
     },
-    {
-      quote:
-        "Kush was an absolute pleasure to work with. They were quick to respond, clear in their communication and demonstrated great technical ability. They went above and beyond with my project and delivered on all of their promises. I look forward to working with Lumio again.",
-      author: "Jeff Hammerberg",
-      position: "Founder & President",
-      company: "Hammerberg & Associates, Inc.",
-      image: "/images/Jeff Hammerberg.avif",
-    },
+
     {
       quote:
         "They just get it done! Simple, easy to work with, and fast. They broke down complex AI terms into simple language and made us feel completely involved. They understood our problems instantly and quickly iterated on feedback we gave them. We've already begun our second project with Lumio!",
       author: "",
       position: "",
       company: "Financial Services Company in South Korea",
-      image:  "/images/Real estate company in dubai.avif",
+      image: "/images/Real estate company in dubai.avif",
     },
   ];
 
   return (
-    <section className="py-20 bg-accent/50" id="testimonials">
-      <div className="container px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
-            Trusted by Small to Medium Sized Businesses like Yours
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            See how businesses across industries are leveraging our AI solutions
-            to transform their operations and drive growth
-          </p>
+    <Dialog
+      open={!!activeVideo}
+      onOpenChange={(isOpen) => !isOpen && setActiveVideo(null)}
+    >
+      <section className="py-20 bg-accent/50" id="testimonials">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Trusted by Small to Medium Sized Businesses like Yours
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              See how businesses across industries are leveraging our AI
+              solutions to transform their operations and drive growth.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-background flex flex-col h-full">
+                <CardContent className="pt-6 flex flex-col h-full">
+                  {testimonial.video && (
+                    <div
+                      className="flex justify-center mb-6"
+                      id={`4b4ub6_${index}`}
+                    >
+                      <Button
+                        variant="outline"
+                        className="flex items-center gap-2"
+                        size="lg"
+                        id={`p3ge29_${index}`}
+                        onClick={() => setActiveVideo(testimonial.video)}
+                      >
+                        <PlayIcon className="h-5 w-5" id={`8ahb7q_${index}`} />
+                        Watch Testimonial Video
+                      </Button>
+                    </div>
+                  )}
+                  <div className="flex flex-col flex-grow">
+                    <p className="text-lg mb-6">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <img
+                      src={testimonial.image || "/placeholder.svg"}
+                      alt={testimonial.author || testimonial.company}
+                      className="h-12 w-12 rounded-full"
+                    />
+                    <div>
+                      {testimonial.author && (
+                        <p className="font-semibold">{testimonial.author}</p>
+                      )}
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.position && `${testimonial.position}, `}
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-background flex flex-col h-full">
-            <CardContent className="pt-6 flex flex-col h-full">
-              <div className="flex flex-col flex-grow">
-                <p className="text-lg mb-6">&quot;{testimonial.quote}&quot;</p>
-              </div>
-              <div className="flex items-center gap-4 mt-auto">
-                <img
-                  src={testimonial.image || "/placeholder.svg"}
-                  alt={testimonial.author || testimonial.company}
-                  className="h-12 w-12 rounded-full"
-                />
-                <div>
-                  {testimonial.author && <p className="font-semibold">{testimonial.author}</p>}
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.position && `${testimonial.position}, `}
-                    {testimonial.company}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <DialogContent className="max-w-screen-sm aspect-video p-0 border-none !text-white [&>button>svg]:!size-6">
+        <DialogTitle className="hidden"></DialogTitle>
+        <video
+          src={activeVideo as string}
+          className="w-full h-full rounded-md"
+          autoPlay
+          controls
+          muted
+        />
+      </DialogContent>
+    </Dialog>
   );
 }

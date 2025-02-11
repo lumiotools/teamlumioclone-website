@@ -4,45 +4,35 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MenuIcon, XIcon } from "lucide-react";
 import { Ubuntu } from "next/font/google";
-
-interface HeaderProps {
-  setCurrentPage: (page: string) => void;
-  currentPage: string;
-}
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { handleLinkClick } from "@/utils/handleLinkClick";
+import { useRouter } from "next/navigation";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-export function Header({ setCurrentPage, currentPage }: HeaderProps) {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const currentPath = usePathname();
+  const router = useRouter();
 
   const navItems = [
-    { label: "Solutions", href: "#features", page: "home" },
-    { label: "About", href: "#about", page: "home" },
-    { label: "Testimonials", href: "#testimonials", page: "home" },
-    { label: "Methodology", href: "#methodology", page: "home" },
-    { label: "Blogs", href: "/blogs", page: "blogs" },
-    { label: "Careers", href: "/careers", page: "careers" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "Solutions", href: "/#features" },
+    { label: "About", href: "/#about" },
+    { label: "Methodology", href: "/methodology" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Careers", href: "/careers" },
   ];
 
-  interface NavItem {
-    label: string;
-    href: string;
-    page: string;
-  }
-
   const handleNavClick = (
-    item: NavItem,
+    href: string,
     e: React.MouseEvent<HTMLElement, MouseEvent>
   ) => {
-    e.preventDefault();
-    setCurrentPage(item.page);
-    if (item.href.startsWith("#") && item.page === "home") {
-      const element = document.querySelector(item.href);
-      element?.scrollIntoView({ behavior: "smooth" });
-    }
+    handleLinkClick(href, e, router);
     setIsMenuOpen(false);
   };
 
@@ -50,11 +40,10 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
-          <div
+          <Link
+            href="/"
             className="flex items-center gap-2 cursor-pointer"
-            onClick={(e) =>
-              handleNavClick({ label: "Home", href: "#", page: "home" }, e)
-            }
+            onClick={(e) => handleNavClick("/", e)}
           >
             <div className="h-8 w-8">
               <img src="/images/logos/Lumio AI.png" />
@@ -64,20 +53,20 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
             >
               Lumio AI
             </span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.href}
                 className={`text-sm font-medium hover:text-primary ${
-                  currentPage === item.href ? "text-primary" : ""
+                  currentPath === item.href ? "text-primary" : ""
                 }`}
-                onClick={(e) => handleNavClick(item, e)}
+                onClick={(e) => handleNavClick(item.href, e)}
                 id={`q5dn4m_${index}`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
@@ -95,17 +84,17 @@ export function Header({ setCurrentPage, currentPage }: HeaderProps) {
         <div className="md:hidden border-t">
           <nav className="container flex flex-col gap-4 py-4">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.href}
                 className={`text-sm font-medium hover:text-primary ${
-                  currentPage === item.page ? "text-primary" : ""
+                  currentPath === item.href ? "text-primary" : ""
                 }`}
-                onClick={(e) => handleNavClick(item, e)}
+                onClick={(e) => handleNavClick(item.href, e)}
                 id={`o2mipr_${index}`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="flex flex-col gap-2 pt-4 border-t">
               <Button>Let&apos;s Talk</Button>

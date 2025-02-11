@@ -53,7 +53,7 @@ export function Benefits() {
           </h2>
           <p className="text-lg text-muted-foreground">
             We combine cutting-edge AI technology with practical business
-            solutions to help you succeed
+            solutions to help you succeed.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

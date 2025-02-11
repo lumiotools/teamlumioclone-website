@@ -47,7 +47,7 @@ export default function ChatBot() {
     "Can AI help with submitting lots of online applications?",
   ];
 
-  const handleSend = async () => {
+  const handleSend = async (inputValue: string) => {
     if (!inputValue.trim()) return;
 
     const newMessage = {
@@ -127,7 +127,7 @@ export default function ChatBot() {
       </Button>
 
       <div
-        className={`fixed bottom-0 right-0 w-[400px] bg-background shadow-lg transform transition-transform duration-300 ease-in-out h-[calc(100vh-4rem)] ${
+        className={`fixed bottom-0 right-0 max-w-[100vw] w-[400px] bg-background shadow-lg transform transition-transform duration-300 ease-in-out h-[calc(100vh-4rem)] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -135,7 +135,7 @@ export default function ChatBot() {
           <div className="p-4 border-b flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Avatar>
-                <AvatarImage src="https://github.com/polymet-ai.png" />
+                <AvatarImage src="/images/logos/Lumio AI.png" />
 
                 <AvatarFallback>AI</AvatarFallback>
               </Avatar>
@@ -172,7 +172,7 @@ export default function ChatBot() {
                   <Avatar className="h-8 w-8" id={`wyixj5_${index}`}>
                     {message.role === "assistant" ? (
                       <AvatarImage
-                        src="https://github.com/polymet-ai.png"
+                        src="/images/logos/Lumio AI.png"
                         id={`iwgwru_${index}`}
                       />
                     ) : (
@@ -226,7 +226,7 @@ export default function ChatBot() {
                   className="cursor-pointer hover:bg-accent"
                   onClick={() => {
                     setInputValue(option);
-                    handleSend();
+                    handleSend(option);
                   }}
                   id={`c8nj8k_${index}`}
                 >
@@ -239,10 +239,10 @@ export default function ChatBot() {
                 placeholder="Type your message..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleSend()}
+                onKeyPress={(e) => e.key === "Enter" && handleSend(inputValue)}
               />
 
-              <Button size="icon" onClick={handleSend}>
+              <Button size="icon" onClick={() => handleSend(inputValue)}>
                 <Send className="h-4 w-4" />
               </Button>
             </div>

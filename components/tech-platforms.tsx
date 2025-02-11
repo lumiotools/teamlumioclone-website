@@ -43,7 +43,7 @@ export function TechPlatforms() {
           </h2>
           <p className="text-lg text-muted-foreground">
             We leverage only industry leading technology tools and
-            infrastructure that work best for your specific use case
+            infrastructure that work best for your specific use case.
           </p>
         </div>
         <div
@@ -58,7 +58,7 @@ export function TechPlatforms() {
               <img
                 src={platform.logo}
                 alt={platform.name}
-                className="h-28 w-28 sm:h-20 sm:h-20 object-contain"
+                className="h-28 w-28 sm:h-20 object-contain"
                 id={`mmq6p2_${index}`}
               />
             </div>

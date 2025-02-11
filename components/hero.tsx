@@ -36,10 +36,10 @@ export function Hero() {
           </p>
           <div className="flex flex-col items-center gap-4 w-full">
             <Button size="lg" className="w-[200px]">
-              Meet with Us
+            Get A Free AI Audit
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="outline" className="w-full sm:w-auto">
                 Get a Free AI Audit
               </Button>
@@ -54,7 +54,7 @@ export function Hero() {
               >
                 Try Our Voice Agent
               </Button>
-            </div>
+            </div> */}
           </div>
           <div className="flex items-center gap-4 text-sm">
             <div className="flex -space-x-2">

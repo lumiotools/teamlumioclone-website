@@ -1,27 +1,64 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { handleLinkClick } from "@/utils/handleLinkClick";
 import { LinkedinIcon } from "lucide-react";
 import { Ubuntu } from "next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-interface FooterProps {
-  setCurrentPage: (page: string) => void;
-}
-
-export function Footer({ setCurrentPage }: FooterProps) {
+export function Footer() {
+  const router = useRouter();
   const links = {
-    company: ["About", "Blog", "Careers", "Newsletter"],
-    resources: ["Contact Us", "Privacy Policy", "Terms of Service"],
+    company: [
+      {
+        label: "About",
+        href: "#about",
+      },
+      {
+        label: "Blog",
+        href: "/blogs",
+      },
+      {
+        label: "Careers",
+        href: "/careers",
+      },
+      {
+        label: "Newsletter",
+        href: "#newsletter",
+      },
+    ],
+    resources: [
+      {
+        label: "Contact Us",
+        href: "/",
+      },
+      {
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+      },
+      {
+        label: "Terms of Service",
+        href: "/terms-of-service",
+      },
+    ],
     featured: [
-      "Transform Inbound with AI",
-      "Automate Research with AI",
-      "Filter Applications with AI",
-      "Generate Leads using AI",
-      "Improve Staff Training using AI",
+      {
+        label: "Enhance Customer Service with AI",
+        href: "/blogs/5",
+      },
+      {
+        label: "Transforming Finance with AI",
+        href: "/blogs/4",
+      },
+      {
+        label: "AI for ERPs",
+        href: "/blogs/1",
+      },
     ],
 
     social: [
@@ -35,26 +72,6 @@ export function Footer({ setCurrentPage }: FooterProps) {
     ],
   };
 
-  const handleLinkClick = (link: string) => {
-    switch (link.toLowerCase()) {
-      case "privacy policy":
-        setCurrentPage("privacy-policy");
-        break;
-      case "terms of service":
-        setCurrentPage("terms-of-service");
-        break;
-      case "blog":
-        setCurrentPage("blog");
-        break;
-      case "careers":
-        setCurrentPage("careers");
-        break;
-      default:
-        // Handle other links if needed
-        break;
-    }
-  };
-
   return (
     <footer className="border-t">
       <div className="container px-4 py-12">
@@ -63,7 +80,7 @@ export function Footer({ setCurrentPage }: FooterProps) {
             <div className="w-full md:w-1/3">
               <div className="flex items-center gap-2 mb-4">
                 <div className="h-8 w-8">
-                  <img src="/images/logos/Lumio AI.png"/>
+                  <img src="/images/logos/Lumio AI.png" />
                 </div>
                 <span
                   className={`text-xl font-bold text-primary ${ubuntu.className}`}
@@ -96,14 +113,15 @@ export function Footer({ setCurrentPage }: FooterProps) {
                 <h3 className="font-semibold mb-4">Company</h3>
                 <ul className="space-y-3">
                   {links.company.map((link, index) => (
-                    <li key={link} id={`7n1i06_${index}`}>
-                      <button
-                        onClick={() => handleLinkClick(link)}
+                    <li key={link.href} id={`7n1i06_${index}`}>
+                      <Link
+                        href={link.href}
+                        onClick={(e) => handleLinkClick(link.href, e, router)}
                         className="text-muted-foreground hover:text-foreground"
                         id={`c0mmm7_${index}`}
                       >
-                        {link}
-                      </button>
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -112,14 +130,15 @@ export function Footer({ setCurrentPage }: FooterProps) {
                 <h3 className="font-semibold mb-4">Resources</h3>
                 <ul className="space-y-3">
                   {links.resources.map((link, index) => (
-                    <li key={link} id={`w5vb2m_${index}`}>
-                      <button
-                        onClick={() => handleLinkClick(link)}
+                    <li key={link.href} id={`w5vb2m_${index}`}>
+                      <Link
+                        href={link.href}
+                        onClick={(e) => handleLinkClick(link.href, e, router)}
                         className="text-muted-foreground hover:text-foreground"
                         id={`i0ciem_${index}`}
                       >
-                        {link}
-                      </button>
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -128,13 +147,15 @@ export function Footer({ setCurrentPage }: FooterProps) {
                 <h3 className="font-semibold mb-4">Featured Stories</h3>
                 <ul className="space-y-3">
                   {links.featured.map((link, index) => (
-                    <li key={link} id={`5n230i_${index}`}>
-                      <button
+                    <li key={link.href} id={`5n230i_${index}`}>
+                      <Link
+                        href={link.href}
                         className="text-muted-foreground hover:text-foreground text-left"
                         id={`b7rs5y_${index}`}
+                        onClick={(e) => handleLinkClick(link.href, e, router)}
                       >
-                        {link}
-                      </button>
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>

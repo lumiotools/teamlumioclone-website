@@ -4,7 +4,7 @@ import { MailIcon } from "lucide-react";
 
 export function Newsletter() {
   return (
-    <section className="py-20 bg-accent/50">
+    <section className="py-20 bg-accent/50" id="newsletter">
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex flex-col items-center gap-4">

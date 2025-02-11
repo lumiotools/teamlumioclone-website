@@ -40,7 +40,7 @@ export function HowItWorks() {
             Get Your Free AI Audit
           </h2>
           <p className="text-lg text-muted-foreground">
-            Discover how AI can transform your business in three simple steps
+            Discover how AI can transform your business in three simple steps.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

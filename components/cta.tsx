@@ -39,10 +39,10 @@ export function CTA() {
                 variant="secondary"
                 className="w-[200px] bg-white text-primary hover:bg-white/90"
               >
-                Meet with Us
+                Get A Free AI Audit
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
                   variant="outline"
@@ -65,7 +65,7 @@ export function CTA() {
                 >
                   Try Our Voice Agent
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
