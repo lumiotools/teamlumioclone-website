@@ -136,9 +136,9 @@ export function Footer() {
                         onClick={(e) => handleLinkClick(link.href, e, router)}
                         className="text-muted-foreground hover:text-foreground"
                         id={`i0ciem_${index}`}
-                        {...({
-                          target: link.href.startsWith("mailto") && "_blank",
-                        } as any)}
+                        target={
+                          link.href.startsWith("mailto") ? "_blank" : undefined
+                        }
                       >
                         {link.label}
                       </Link>
