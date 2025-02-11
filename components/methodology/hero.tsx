@@ -1,6 +1,8 @@
+"use client"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, RocketIcon } from "lucide-react";
+import {motion} from 'framer-motion';
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export const MethodologyHero = () => {
@@ -10,8 +12,17 @@ export const MethodologyHero = () => {
         <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05]" />
 
         <div className="relative">
-          <div className="flex flex-col items-center justify-center px-6 py-24 text-center space-y-8 max-w-5xl mx-auto">
-            <Badge variant="outline" className="px-4 py-1 text-base">
+            <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="flex flex-col items-center justify-center px-6 py-24 text-center space-y-8 max-w-5xl mx-auto">
+              <Badge variant="outline" className="px-4 py-1 text-base">
               <span className="mr-2">DROP™</span>Framework
             </Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight max-w-4xl mx-auto leading-tight">
@@ -33,12 +44,21 @@ export const MethodologyHero = () => {
                 Learn More
               </Button> */}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* Framework Diagram moved here */}
       <div className="px-4 py-20 bg-accent/40" id="framework">
-        <section className="max-w-5xl mx-auto space-y-6">
+        <motion.section initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="max-w-5xl mx-auto space-y-6">
           <img
             src="/images/drop.png"
             alt="DROP Framework Diagram"
@@ -48,7 +68,7 @@ export const MethodologyHero = () => {
           <p className="text-sm text-muted-foreground text-center mt-4">
             Architectural representation of the <span className="mr-2">DROP™</span>Framework
           </p>
-        </section>
+        </motion.section>
       </div>
     </>
   );

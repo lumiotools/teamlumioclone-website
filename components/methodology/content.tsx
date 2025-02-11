@@ -1,3 +1,4 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card";
 import {
   DatabaseIcon,
@@ -5,6 +6,7 @@ import {
   PlayIcon,
   PresentationIcon,
 } from "lucide-react";
+import {motion} from 'framer-motion'
 
 export const MethodologyContent = () => {
   const frameworkSteps = [
@@ -67,10 +69,21 @@ export const MethodologyContent = () => {
     },
   ];
 
+  const MotionCard = motion(Card);
+
   return (
     <div className="container mx-auto px-4 py-16 space-y-20">
       {/* Introduction */}
-      <section className="max-w-4xl mx-auto space-y-6">
+      <motion.section initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="max-w-4xl mx-auto space-y-6">
         <h2 className="text-3xl font-bold">Introduction</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
           Small businesses today face growing challenges in managing operations
@@ -84,10 +97,19 @@ export const MethodologyContent = () => {
           Refinement, Operation, and Presentation & Action, a step-by-step
           methodology tailored for small business needs.
         </p>
-      </section>
+      </motion.section>
 
       {/* Framework Overview */}
-      <section className="max-w-4xl mx-auto space-y-6">
+      <motion.section initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="max-w-4xl mx-auto space-y-6">
         <h2 className="text-3xl font-bold">Understanding the DROP<span className="mr-2 font-normal">™</span>Framework</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
           The DROP<span className="mr-2 font-normal">™</span>Framework is designed specifically for small businesses
@@ -95,12 +117,22 @@ export const MethodologyContent = () => {
           phase ensures that AI is easy to implement, adaptable, and provides
           immediate benefits.
         </p>
-      </section>
+      </motion.section>
 
       {/* Framework Steps */}
       <section className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
         {frameworkSteps.map((step, index) => (
-          <Card
+          <MotionCard initial={{ opacity: 0, scale: 0 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.1 * index,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true }}
             key={step.id}
             className="p-8 hover:shadow-lg transition-shadow border-2 hover:border-primary/50"
             id={`vi9vba_${index}`}
@@ -144,23 +176,32 @@ export const MethodologyContent = () => {
                 )}
               </div>
             </CardContent>
-          </Card>
+          </MotionCard>
         ))}
       </section>
 
       {/* Conclusion */}
-      <section className="max-w-4xl mx-auto space-y-6">
+      <motion.section initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="max-w-4xl mx-auto space-y-6">
         <h2 className="text-3xl font-bold">
           The Role of DROP<span className="mr-2 font-normal">™</span>in Small Business AI Adoption
         </h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
           With the DROP<span className="mr-2 font-normal">™</span>Framework, small businesses can integrate AI into their
           workflows without the need for extensive technical expertise or
-          expensive enterprise solutions. Whether it's automating tasks,
+          expensive enterprise solutions. Whether it&apos;s automating tasks,
           improving customer engagement, or making data-driven decisions, AI is
           now accessible and practical for small business owners.
         </p>
-      </section>
+      </motion.section>
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { blogPosts } from "@/constants/blog-data";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 // import { useState } from "react";
 
@@ -86,21 +87,43 @@ export default function Blogs() {
     router.push(`/blogs/${blogId}`)
   };
 
+  const MotionCard = motion(Card);
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container px-4 py-20">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-20">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Blogs
           </h1>
           <p className="text-xl text-muted-foreground">
             Discover inspiring success stories made possible by AI
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <Card
+            <MotionCard initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
               key={post.id}
               className="overflow-hidden border-none shadow-none cursor-pointer group"
               onClick={() => handleBlogClick(post.id)}
@@ -133,7 +156,7 @@ export default function Blogs() {
                   </h2>
                 </div>
               </CardContent>
-            </Card>
+            </MotionCard>
           ))}
         </div>
       </div>

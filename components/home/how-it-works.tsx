@@ -1,3 +1,4 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card";
 import {
   MessageSquareIcon,
@@ -6,6 +7,7 @@ import {
   ArrowRightIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export function HowItWorks() {
   const steps = [
@@ -32,20 +34,40 @@ export function HowItWorks() {
     },
   ];
 
+  const MotionCard = motion(Card);
   return (
     <section className="py-20">
       <div className="container px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
             Get Your Free AI Audit
           </h2>
           <p className="text-lg text-muted-foreground">
             Discover how AI can transform your business in three simple steps.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <Card
+            <MotionCard initial={{ opacity: 0, scale: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay:index * 0.1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
               key={index}
               className="relative overflow-hidden"
               id={`tm4vj5_${index}`}
@@ -75,12 +97,21 @@ export function HowItWorks() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </MotionCard>
           ))}
         </div>
 
         <div className="max-w-3xl mx-auto mt-16">
-          <Card className="bg-primary text-primary-foreground">
+          <MotionCard initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="bg-primary text-primary-foreground">
             <CardContent className="p-8">
               <div
                 className="flex flex-col md:flex-row items-center justify-between gap-6"
@@ -103,7 +134,7 @@ export function HowItWorks() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+          </MotionCard>
         </div>
       </div>
     </section>

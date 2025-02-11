@@ -10,20 +10,20 @@ export function Hero() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-        ease: "easeOut",
-      }}
-      viewport={{ once: true }}
+    <div
       className="relative overflow-hidden min-h-[calc(100vh-4rem)]"
     >
       <div className="container px-4 h-full flex items-center min-h-[calc(100vh-4rem)]">
-        <div className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto">
           {/* <div
             className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm"
           >
@@ -90,7 +90,7 @@ export function Hero() {
               <p className="text-muted-foreground">that trust Lumio AI</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -103,6 +103,6 @@ export function Hero() {
         isOpen={isVoiceModalOpen}
         setIsOpen={setIsVoiceModalOpen}
       />
-    </motion.div>
+    </div>
   );
 }

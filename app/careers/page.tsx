@@ -10,6 +10,7 @@ import {
   CrownIcon,
   TrendingUpIcon,
 } from "lucide-react";
+import {motion} from 'framer-motion';
 
 export default function Careers() {
   const cultureValues = [
@@ -74,12 +75,23 @@ export default function Careers() {
     },
   ];
 
+  const MotionCard = motion(Card);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div initial={{ opacity: 0, y: -100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
             <h1
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
             >
@@ -88,14 +100,24 @@ export default function Careers() {
             <p className="text-xl text-muted-foreground">
               Join us to shape the future with innovative AI solutions.
             </p>
-          </div>
+          </motion.div>
 
           {/* Benefits Grid */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20"
           >
             {benefits.map((benefit, index) => (
-              <Card
+              <MotionCard initial={{ opacity: 0, scale: 0 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay:index * 0.1,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
                 key={index}
                 className="bg-card hover:bg-accent/50 transition-colors"
                 id={`p4bqsf_${index}`}
@@ -111,12 +133,21 @@ export default function Careers() {
                     {benefit.description}
                   </p>
                 </CardContent>
-              </Card>
+              </MotionCard>
             ))}
           </div>
 
           {/* Culture Section */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-4">
               Lumio AI&apos;s Culture
             </h2>
@@ -124,13 +155,23 @@ export default function Careers() {
               Read about Lumio AI&apos;s trust, ownership, and results-driven
               culture.
             </p>
-          </div>
+          </motion.div>
 
           <div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24"
           >
             {cultureValues.map((value, index) => (
-              <Card
+              <MotionCard initial={{ opacity: 0, scale: 0 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay:index * 0.1,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
                 key={index}
                 className="bg-card hover:bg-accent/50 transition-colors"
                 id={`rwy7cs_${index}`}
@@ -157,7 +198,7 @@ export default function Careers() {
                     {value.description}
                   </p>
                 </CardContent>
-              </Card>
+              </MotionCard>
             ))}
           </div>
         </div>

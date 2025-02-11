@@ -1,5 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+import { CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";  // Correct the import
 
 export function AboutUs() {
   const companies = [
@@ -56,53 +59,74 @@ export function AboutUs() {
       logo: "/images/logos/CSE logo.png",
     },
     {
-      name:"Business Standard",
-      logo:"/images/logos/business-standard.png"
+      name: "Business Standard",
+      logo: "/images/logos/business-standard.png",
     },
     {
-      name:"Deccan Herald",
-      logo:"/images/logos/Deccan Herald.png",
+      name: "Deccan Herald",
+      logo: "/images/logos/Deccan Herald.png",
       className: "invert py-4",
     },
     {
-      name:"Housing Wire",
-      logo:"/images/logos/housing wire.svg"
+      name: "Housing Wire",
+      logo: "/images/logos/housing wire.svg",
     },
     {
-      name:"New Atlas",
-      logo:"/images/logos/new atlas.svg",
-      className:'w-full h-[32px]'
+      name: "New Atlas",
+      logo: "/images/logos/new atlas.svg",
+      className: "w-full h-[32px]",
     },
     {
-      name:"Wowtale",
-      logo:"/images/logos/wowtale.png",
-      className:""
+      name: "Wowtale",
+      logo: "/images/logos/wowtale.png",
+      className: "",
     },
     {
-      name:"Yahoo",
-      logo:"/images/logos/yahoo.png"
-    }
+      name: "Yahoo",
+      logo: "/images/logos/yahoo.png",
+    },
   ];
+
+  const MotionCard = motion(Card);
 
   return (
     <section className="py-20 bg-accent/50" id="about">
       <div className="container px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
+        <div  className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center mb-8"
+          >
             <h2 className="text-3xl font-bold tracking-tight mb-4">About Us</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Founded by Kush Jain and Ananth Subramanya, our team brings
               together expert engineers and strategists from top engineering
               institutions and leading tech giants such as Intuit, Cisco,
-              Amazon, and Microsoft. We&apos;ve been recognized by Forbes 30 Under 30
-              and CES Innovation Award for our groundbreaking AI solutions.
-              Whether you need smarter operations, AI-powered customer
-              interactions, or seamless integrations, we make AI accessible,
-              practical, and built for growth.
+              Amazon, and Microsoft. We&apos;ve been recognized by Forbes 30
+              Under 30 and CES Innovation Award for our groundbreaking AI
+              solutions. Whether you need smarter operations, AI-powered
+              customer interactions, or seamless integrations, we make AI
+              accessible, practical, and built for growth.
             </p>
-          </div>
+          </motion.div>
 
-          <Card className="bg-background mb-8">
+          <MotionCard initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }} className="bg-background mb-8">
             <CardContent className="p-8">
               <h3 className="text-lg font-semibold mb-7 text-center">
                 Our Team&apos;s Experience
@@ -124,9 +148,18 @@ export function AboutUs() {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </MotionCard>
 
-          <Card className="bg-background">
+          <MotionCard initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }} className="bg-background">
             <CardContent className="p-8">
               <h3 className="text-lg font-semibold mb-4 text-center">
                 Recognition & Awards
@@ -151,7 +184,7 @@ export function AboutUs() {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </MotionCard>
         </div>
       </div>
     </section>

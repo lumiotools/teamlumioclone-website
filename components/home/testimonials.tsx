@@ -96,14 +96,14 @@ export function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <MotionCard
                 key={index}
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{
                   opacity: 1,
                   scale: 1,
                 }}
                 transition={{
-                  duration: 1,
-                  delay: 0.2 * index,
+                  duration: 0.5,
+                  delay: 0.1 * index,
                   ease: "easeOut",
                 }}
                 viewport={{ once: true }}

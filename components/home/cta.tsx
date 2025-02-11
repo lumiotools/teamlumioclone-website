@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { VoiceAgentModal } from "@/components/home/voice-agent-modal";
+import { motion } from "framer-motion";
 
 export function CTA() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
@@ -11,7 +12,16 @@ export function CTA() {
   return (
     <section className="py-20">
       <div className="container px-4">
-        <div
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
           className="relative overflow-hidden rounded-3xl bg-primary px-6 py-20 text-primary-foreground"
         >
           <div
@@ -68,7 +78,7 @@ export function CTA() {
               </div> */}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <VoiceAgentModal
         isOpen={isVoiceModalOpen}

@@ -5,6 +5,7 @@ import {  blogPosts, type BlogPost } from "@/constants/blog-data";
 import {  ArrowRightIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import  ReactMarkdown  from 'react-markdown';
+import {motion} from 'framer-motion';
 
 export default function BlogPost() {
   // const router = useRouter();
@@ -36,23 +37,53 @@ export default function BlogPost() {
 
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
-          <h1
+          <motion.h1 initial={{ opacity: 0, x:-100 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-center"
           >
             {post?.title}
-          </h1>
+          </motion.h1>
 
           {/* Featured Image */}
-          <div className="relative w-full overflow-hidden mb-12">
+          <motion.div initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }} className="relative w-full overflow-hidden mb-12">
             <img
               src={post?.image}
               alt={post?.title}
               // fill
               className="object-cover aspect-[16/9] w-full rounded-lg"
             />
-          </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} >
 
           <ReactMarkdown className="prose lg:prose-xl">{post?.content}</ReactMarkdown>
+            </motion.div>
 
           {/* Introduction
           <p className="text-lg text-muted-foreground mb-12">
@@ -161,12 +192,21 @@ export default function BlogPost() {
              
             </div>
           </section> */}
-           <div className="flex justify-center mt-10">
+           <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="flex justify-center mt-10">
                 <Button size="lg" className="rounded-full">
                   Book a Free Consultation
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </Button>
-              </div>
+              </motion.div>
         </div>
       </article>
     </div>

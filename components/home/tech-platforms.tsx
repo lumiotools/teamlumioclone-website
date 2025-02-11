@@ -1,3 +1,5 @@
+"use client"
+import {motion} from 'framer-motion'
 export function TechPlatforms() {
   const platforms = [
     {
@@ -37,7 +39,16 @@ export function TechPlatforms() {
   return (
     <section className="py-16 bg-background">
       <div className="container px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight mb-4">
             Industry Leading Technology Stack
           </h2>
@@ -45,8 +56,17 @@ export function TechPlatforms() {
             We leverage only industry leading technology tools and
             infrastructure that work best for your specific use case.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
           className="flex flex-wrap gap-10 sm:gap-4 items-center justify-center"
         >
           {platforms.map((platform, index) => (
@@ -63,7 +83,7 @@ export function TechPlatforms() {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

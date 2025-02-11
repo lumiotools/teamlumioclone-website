@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  PlayIcon,
+  // PlayIcon,
   HeadphonesIcon,
   LineChartIcon,
   UsersIcon,
@@ -16,6 +16,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { VoiceAgentModal } from "./voice-agent-modal";
+import { motion } from "framer-motion";
 
 export function Features() {
   const [activeVideo, setActiveVideo] = useState(0);
@@ -66,8 +67,7 @@ export function Features() {
   const videoShowcase = [
     {
       title: "Business Process Automation",
-      description:
-        "Automate complete processes using intelligent AI agents.",
+      description: "Automate complete processes using intelligent AI agents.",
       videoUrl: "/videos/features-ai-agents.mp4",
     },
     {
@@ -84,24 +84,36 @@ export function Features() {
     },
     {
       title: "Video & Voice AI",
-      description:
-        "Automate voice and video processes using agents.",
+      description: "Automate voice and video processes using agents.",
       videoUrl: "/videos/features-voice-and-video-ai.mp4",
     },
     {
       title: "AI Powered Search",
-      description:
-        "Search your Data using Natural Language.",
+      description: "Search your Data using Natural Language.",
       videoUrl: "/videos/features-ai-search.mp4",
     },
   ];
+
+  const MotionCard = motion(Card);
 
   return (
     <section className="py-20 bg-background" id="features">
       <div className="container px-4">
         {/* New Capabilities Section */}
         <div className="mb-20">
-          <div className="text-center mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
             <Badge
               variant="outline"
               className="mb-4 px-4 py-1 text-sm font-medium"
@@ -113,14 +125,25 @@ export function Features() {
               <span className="text-primary">Our AI Solution</span>
             </h2>
             <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-              Describe your company's unique workflows and challenges, and we'll
+              Describe your company&apos;s unique workflows and challenges, and well
               develop a custom AI agent that perfectly matches your operational
               needs.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {capabilities.map((capability, index) => (
-              <Card
+              <MotionCard
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 * index,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
                 key={index}
                 className="p-6 hover:bg-accent/50 transition-colors cursor-pointer"
                 onClick={() =>
@@ -176,19 +199,43 @@ export function Features() {
                     ))}
                   </ul>
                 )}
-              </Card>
+              </MotionCard>
             ))}
           </div>
         </div>
 
         {/* Video Showcase Section */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold tracking-tight mb-6">
-            Examples of AI Solutions We've Built Previously
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }} // Starts below the screen with zero opacity
+            whileInView={{
+              opacity: 1, // Fade in
+              y: 0, // Slide to its natural position
+            }}
+            transition={{
+              duration: 1, // Adjust the duration for the slide effect
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold tracking-tight mb-6"
+          >
+            Examples of AI Solutions We&apos;ve Built Previously
+          </motion.h2>
         </div>
 
-        <Card className="w-full max-w-[1000px] mx-auto overflow-hidden">
+        <MotionCard
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true }}
+          className="w-full max-w-[1000px] mx-auto overflow-hidden"
+        >
           {/* Video Selection Buttons */}
           <div className="flex flex-wrap gap-2 p-4 border-b">
             {videoShowcase.map((video, index) => (
@@ -231,11 +278,23 @@ export function Features() {
               <PlayIcon className="w-16 h-16 text-white" />
             </div> */}
           </div>
-        </Card>
+        </MotionCard>
 
         {/* AI Action Section */}
         <div className="mt-8">
-          <div className="relative bg-primary/10 rounded-3xl p-8">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }} // Starts below the screen with zero opacity
+            whileInView={{
+              opacity: 1, // Fade in
+              y: 0, // Slide to its natural position
+            }}
+            transition={{
+              duration: 1, // Adjust the duration for the slide effect
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="relative bg-primary/10 rounded-3xl p-8"
+          >
             <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
                 Try Our AI And Learn More About Lumio
@@ -259,7 +318,7 @@ export function Features() {
                 </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <VoiceAgentModal

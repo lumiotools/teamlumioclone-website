@@ -1,4 +1,6 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import {
   BotIcon,
   BuildingIcon,
@@ -44,10 +46,21 @@ export function Benefits() {
     },
   ];
 
+  const MotionCard = motion(Card);
+
   return (
     <section className="py-20">
       <div className="container px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
             Why Choose Lumio AI?
           </h2>
@@ -55,10 +68,20 @@ export function Benefits() {
             We combine cutting-edge AI technology with practical business
             solutions to help you succeed.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {benefits.map((benefit, index) => (
-            <Card
+            <MotionCard initial={{ opacity: 0, scale: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1 * index,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
               key={index}
               className="border-none shadow-none bg-accent/50"
               id={`q3qpvb_${index}`}
@@ -85,12 +108,22 @@ export function Benefits() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </MotionCard>
           ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {bottomBenefits.map((benefit, index) => (
-            <Card
+            <MotionCard initial={{ opacity: 0, scale: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1 * index,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
               key={index}
               className="border-none shadow-none bg-accent/50"
               id={`q3qpvb_${index + 3}`}
@@ -123,7 +156,7 @@ export function Benefits() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </MotionCard>
           ))}
         </div>
       </div>
