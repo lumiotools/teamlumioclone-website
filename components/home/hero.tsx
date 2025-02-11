@@ -10,20 +10,20 @@ export function Hero() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
   return (
-    <div
-      className="relative overflow-hidden min-h-[calc(100vh-4rem)]"
-    >
+    <div className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
       <div className="container px-4 h-full flex items-center min-h-[calc(100vh-4rem)]">
-        <motion.div initial={{ opacity: 0, y: 100 }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }} className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto"
+        >
           {/* <div
             className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm"
           >
