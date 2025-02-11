@@ -120,7 +120,7 @@ export default function Careers() {
                 key={index}
                 id={`p4bqsf_${index}`}
               >
-                <Card className="bg-card hover:bg-accent/50 transition-colors">
+                <Card className="bg-card h-full hover:bg-accent/50 transition-colors">
                   <CardContent className="p-6" id={`9heqsn_${index}`}>
                     <h3
                       className="text-2xl font-bold mb-4"
@@ -175,7 +175,7 @@ export default function Careers() {
                 key={index}
                 id={`rwy7cs_${index}`}
               >
-                <Card className="bg-card hover:bg-accent/50 transition-colors">
+                <Card className="bg-card h-full hover:bg-accent/50 transition-colors">
                   <CardContent className="p-6" id={`p31m7j_${index}`}>
                     <div
                       className="flex items-center gap-4 mb-4"
