@@ -124,7 +124,8 @@ export default function Blogs() {
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, // Trigger the animation when 20% of the card is visible
+                offset: "100px", }}
               key={post.id}
               onClick={() => handleBlogClick(post.id)}
               id={`bqigeb_${index}`}

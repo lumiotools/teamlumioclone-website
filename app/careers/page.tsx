@@ -206,7 +206,7 @@ export default function Careers() {
       </section>
 
       {/* Fixed Apply Button - Positioned to the left of the ChatBot */}
-      <div className="fixed bottom-8 right-24 z-50">
+      <div className="fixed bottom-8 right-4 sm:right-10 z-50">
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSfBApUN0uIRXAwjE43RVa2c8KIjqZWDRTAZkMfOS3qRHLqMEw/viewform?usp=sf_link"
           target="_blank"
