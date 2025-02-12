@@ -25,6 +25,7 @@ export function Newsletter() {
         description: "Please enter a valid email address",
         variant: "destructive",
       });
+      return;
     }
 
     const response = await (
