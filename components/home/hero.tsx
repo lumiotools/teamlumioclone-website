@@ -17,7 +17,7 @@ export function Hero({
   return (
     <div className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
       <div className="container px-4 h-full flex items-center min-h-[calc(100vh-4rem)]">
-        <div className="flex flex-col items-center text-center gap-12 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center gap-8 sm:gap-12 max-w-4xl mx-auto">
           {/* <div
             className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm"
           >
@@ -42,9 +42,9 @@ export function Hero({
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-bold tracking-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight "
           >
-            <span className="text-primary">Custom AI Workers</span> for Small
+            <span className="text-primary ">Custom AI Workers</span> for Small
             Businesses
           </motion.h1>
           <motion.p
@@ -58,7 +58,7 @@ export function Hero({
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-[42rem]"
+            className="text-lg sm:text-xl text-muted-foreground max-w-[42rem]"
           >
             Experience what AI can do for your business. Our Custom Agents
             transform how work happens and we provide a guaranteed ROI on all
@@ -139,7 +139,7 @@ export function Hero({
               ))}
             </div>
             <div className="text-left">
-              <p className="font-medium">Join the dozens of businesses</p>
+              <p className="font-medium text-sm sm:text-base">Join the dozens of businesses</p>
               <p className="text-muted-foreground">that trust Lumio AI</p>
             </div>
           </motion.div>

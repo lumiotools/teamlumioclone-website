@@ -117,7 +117,7 @@ export function Newsletter() {
               className="w-full max-w-md mt-4"
             >
               <form
-                className="flex flex-col sm:flex-row gap-3"
+                className="flex flex-row gap-3"
                 onSubmit={handleSubscribe}
               >
                 <Input
@@ -138,7 +138,7 @@ export function Newsletter() {
                   )}
                 </Button>
               </form>
-              <p className="text-sm text-muted-foreground mt-3">
+              <p className="text-sm text-muted-foreground mt-5">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </motion.div>

@@ -67,7 +67,7 @@ export function Testimonials() {
       open={!!activeVideo}
       onOpenChange={(isOpen) => !isOpen && setActiveVideo(null)}
     >
-      <section className="py-20 bg-accent/50" id="testimonials">
+      <section className="py-20  bg-accent/50" id="testimonials">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 150 }}
@@ -85,7 +85,7 @@ export function Testimonials() {
             <h2 className="text-3xl font-bold tracking-tight mb-4">
               Trusted by Small to Medium Sized Businesses like Yours
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg  text-muted-foreground">
               See how businesses across industries are leveraging our AI
               solutions to transform their operations and drive growth.
             </p>
@@ -156,7 +156,7 @@ export function Testimonials() {
           </div>
         </div>
       </section>
-      <DialogContent className="max-w-screen-lg aspect-video p-0 border-none !text-white [&>button>svg]:!size-6">
+      <DialogContent className="max-w-screen-lg aspect-video p-0 border-none !text-white [&>button>svg]:!size-4 sm:[&>button>svg]:!size-6 ">
         <DialogTitle className="hidden"></DialogTitle>
         <video
           src={activeVideo as string}

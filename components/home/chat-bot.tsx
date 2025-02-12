@@ -125,7 +125,7 @@ export default function ChatBot({
       )}
 
       <Button
-        className="fixed bottom-4 right-4 rounded-full h-14 w-14 p-0 shadow-lg"
+        className="fixed bottom-4 right-4 rounded-full h-14 w-14 p-0 shadow-lg z-[2]"
         onClick={() => setIsOpen(true)}
       >
         <MessageCircle className="h-6 w-6" />

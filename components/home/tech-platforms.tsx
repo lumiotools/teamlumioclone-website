@@ -77,7 +77,7 @@ export function TechPlatforms() {
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-          className="flex flex-wrap gap-10 sm:gap-4 items-center justify-center"
+          className="flex flex-wrap gap-2 sm:gap-4 items-center justify-center"
         >
           {platforms.map((platform, index) => (
             <div
@@ -88,7 +88,7 @@ export function TechPlatforms() {
               <img
                 src={platform.logo}
                 alt={platform.name}
-                className={cn("h-28 w-28 sm:h-20 object-contain", platform.className)}
+                className={cn("h-16 w-16 sm:h-24 sm:w-24 object-contain", platform.className)}
                 id={`mmq6p2_${index}`}
               />
             </div>

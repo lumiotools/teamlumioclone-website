@@ -9,6 +9,7 @@ export function AboutUs() {
     {
       name: "HP",
       logo: "/images/logos/hp.png",
+      className: "py-1",
     },
     {
       name: "Intuit",
@@ -146,8 +147,8 @@ export function AboutUs() {
                       <img
                         src={company.logo}
                         alt={company.name}
-                        className={
-                          "max-h-12 max-w-40 object-cover"}
+                        className={cn(
+                          "sm:max-h-12 sm:max-w-32 max-h-10 max-w-20 object-cover", company.className)}
                         id={`s9l5h6_${index}`}
                       />
                     </div>
@@ -172,14 +173,14 @@ export function AboutUs() {
           >
             <Card className="bg-background">
               <CardContent className="p-8 overflow-hidden relative">
-              <div className="rounded-xl absolute top-0 left-0 w-full h-full z-10 overflow-hidden flex justify-between">
+              <div className="rounded-xl absolute top-0 left-0 w-full h-full z-[1] overflow-hidden flex justify-between">
                   <div className="w-32 h-full bg-gradient-to-r from-white to-transparent" />
                   <div className="w-32 h-full bg-gradient-to-l from-white to-transparent" />
                 </div>
                 <h3 className="text-lg font-semibold mb-6 text-center">
                   Recognition & Awards
                 </h3>
-                <div className="relative w-full">
+                <div className="w-full">
                   <div
                     className="flex w-max animate-scroll"
                     style={{
@@ -191,7 +192,7 @@ export function AboutUs() {
                     {scrollCompanies.map((awards, index) => (
                       <div
                         key={index}
-                        className="flex-shrink-0 flex justify-center items-center px-8"
+                        className="flex-shrink-0 flex justify-center items-center px-6 sm:px-8"
                         id={`a5w3y4_${index}`}
                       >
                         <img

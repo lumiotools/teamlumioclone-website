@@ -66,7 +66,7 @@ export function Footer() {
       {
         name: "LinkedIn",
         icon: LinkedinIcon,
-        href: "https://www.linkedin.com/company/lumio-ai",
+        href: "https://www.linkedin.com/company/lumio-ai/",
       },
       // { name: "Facebook", icon: FacebookIcon },
     ],
