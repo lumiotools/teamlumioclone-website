@@ -34,15 +34,17 @@ export function TechPlatforms() {
     {
       name: "Together.ai",
       logo: "/images/logos/Together.ai.png",
+      className: 'w-24 h-24 sm:!w-32 sm:!h-32'
     },
     {
       name:"Anthropic",
-      logo:"/images/logos/anthropic.webp"
+      logo:"/images/logos/anthropic.webp",
+      className: ' w-24 sm:!w-32'
     },
     {
       name:"Anyscale",
       logo:"/images/logos/anyscale.png",
-      className: 'px-2 w-32'
+      className: 'px-2 w-24 sm:!w-32'
     }
   ];
 
@@ -59,7 +61,7 @@ export function TechPlatforms() {
               ease: "easeOut",
             }}
             viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl font-bold tracking-tight mb-4">
             Industry Leading Technology Stack
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -77,7 +79,7 @@ export function TechPlatforms() {
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-          className="flex flex-wrap gap-2 sm:gap-4 items-center justify-center"
+          className="flex flex-wrap gap-2 sm:gap-7 items-center justify-center"
         >
           {platforms.map((platform, index) => (
             <div

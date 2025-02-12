@@ -80,8 +80,9 @@ export function Hero({
             <Link
               href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
               target="_blank"
+              className='w-full'
             >
-              <Button size="lg" className="w-[200px]">
+              <Button size="lg" className="w-[250px]">
                 Meet with Us
                 <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
@@ -92,17 +93,17 @@ export function Hero({
               target="_blank"
               >
 
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-[250px]">
                 Get a Free AI Audit
               </Button>
               </Link>
-              <Button onClick={() => setIsChatBotOpen(true)} size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button onClick={() => setIsChatBotOpen(true)} size="lg" variant="outline" className="w-[250px]">
                 Ask Our AI Any Questions
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto"
+                className="w-[250px] "
                 onClick={() => setIsVoiceModalOpen(true)}
               >
                 Try Our Voice Agent
