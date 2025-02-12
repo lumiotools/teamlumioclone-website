@@ -52,7 +52,7 @@ export function AboutUs() {
     {
       name: "Forbes 30 Under 30",
       logo: "/images/logos/Forbes logo.png",
-      className: "py-6",
+      className: "py-2",
     },
     {
       name: "CES Innovation Award",
@@ -65,7 +65,7 @@ export function AboutUs() {
     {
       name: "Deccan Herald",
       logo: "/images/logos/Deccan Herald.png",
-      className: "invert py-4",
+      className: "invert py-1",
     },
     {
       name: "Housing Wire",
@@ -74,7 +74,7 @@ export function AboutUs() {
     {
       name: "New Atlas",
       logo: "/images/logos/new atlas.svg",
-      className: "w-full h-[32px]",
+      className: "max-h-20 max-w-40 object-cover w-full h-[32px] pt-1",
     },
     {
       name: "Wowtale",
@@ -87,7 +87,7 @@ export function AboutUs() {
     },
   ];
 
-  const scrollCompanies = [...companies, ...companies];
+  const scrollCompanies = [...awards, ...awards];
 
   return (
     <section className="py-20 bg-accent/50" id="about">
@@ -133,38 +133,27 @@ export function AboutUs() {
           >
             <Card className="bg-background mb-8">
               <CardContent className="p-8 overflow-hidden relative">
-                <div className="rounded-xl absolute top-0 left-0 w-full h-full z-10 overflow-hidden flex justify-between">
-                  <div className="w-32 h-full bg-gradient-to-r from-white to-transparent" />
-                  <div className="w-32 h-full bg-gradient-to-l from-white to-transparent" />
-                </div>
                 <h3 className="text-lg font-semibold mb-8 text-center">
-                  Our Team&apos;s Experience
+                  Our Team&apos;s Background
                 </h3>
-                <div className="relative w-full">
-                  <div
-                    className="flex w-max animate-scroll"
-                    style={{
-                      animationDuration: "20s",
-                      animationTimingFunction: "linear",
-                      animationIterationCount: "infinite",
-                    }}
-                  >
-                    {scrollCompanies.map((company, index) => (
-                      <div
-                        key={index}
-                        className="flex-shrink-0 flex justify-center items-center px-8"
-                        id={`a5w3y4_${index}`}
-                      >
-                        <img
-                          src={company.logo}
-                          alt={company.name}
-                          className="max-h-12 max-w-40 object-contain"
-                          id={`bbjzhn_${index}`}
-                        />
-                      </div>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap  gap-10 gap-y-6 items-center justify-center">
+                  {companies.map((company, index) => (
+                    <div
+                      key={index}
+                      // className="grayscale hover:grayscale-0 transition-all"
+                      id={`bo6cjo_${index}`}
+                    >
+                      <img
+                        src={company.logo}
+                        alt={company.name}
+                        className={
+                          "max-h-12 max-w-40 object-cover"}
+                        id={`s9l5h6_${index}`}
+                      />
+                    </div>
+                  ))}
                 </div>
+                
               </CardContent>
             </Card>
           </motion.div>
@@ -182,28 +171,41 @@ export function AboutUs() {
             viewport={{ once: true }}
           >
             <Card className="bg-background">
-              <CardContent className="p-8">
+              <CardContent className="p-8 overflow-hidden relative">
+              <div className="rounded-xl absolute top-0 left-0 w-full h-full z-10 overflow-hidden flex justify-between">
+                  <div className="w-32 h-full bg-gradient-to-r from-white to-transparent" />
+                  <div className="w-32 h-full bg-gradient-to-l from-white to-transparent" />
+                </div>
                 <h3 className="text-lg font-semibold mb-6 text-center">
                   Recognition & Awards
                 </h3>
-                <div className="flex flex-wrap  gap-10 gap-y-4 items-center justify-center">
-                  {awards.map((award, index) => (
-                    <div
-                      key={index}
-                      // className="grayscale hover:grayscale-0 transition-all"
-                      id={`bo6cjo_${index}`}
-                    >
-                      <img
-                        src={award.logo}
-                        alt={award.name}
-                        className={cn(
-                          "max-h-20 max-w-40 object-cover",
-                          award.className
-                        )}
-                        id={`s9l5h6_${index}`}
-                      />
-                    </div>
-                  ))}
+                <div className="relative w-full">
+                  <div
+                    className="flex w-max animate-scroll"
+                    style={{
+                      animationDuration: "20s",
+                      animationTimingFunction: "linear",
+                      animationIterationCount: "infinite",
+                    }}
+                  >
+                    {scrollCompanies.map((awards, index) => (
+                      <div
+                        key={index}
+                        className="flex-shrink-0 flex justify-center items-center px-8"
+                        id={`a5w3y4_${index}`}
+                      >
+                        <img
+                          src={awards.logo}
+                          alt={awards.name}
+                          className={cn(
+                            "max-h-12 max-w-40 object-contain",
+                            awards.className
+                          )}
+                          id={`bbjzhn_${index}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>
