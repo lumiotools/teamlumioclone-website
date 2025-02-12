@@ -6,7 +6,7 @@ import {  ArrowRightIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import  ReactMarkdown  from 'react-markdown';
 import {motion} from 'framer-motion';
-import Link from 'next/Link'
+import Link from 'next/link'
 
 export default function BlogPost() {
   // const router = useRouter();
