@@ -7,7 +7,11 @@ import { VoiceAgentModal } from "@/components/home/voice-agent-modal";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export function Hero() {
+export function Hero({
+  setIsChatBotOpen,
+}: {
+  setIsChatBotOpen: (isOpen: boolean) => void;
+}) {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
   return (
@@ -74,19 +78,25 @@ export function Hero() {
             className="flex flex-col items-center gap-4 w-full"
           >
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
+              href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
               target="_blank"
             >
               <Button size="lg" className="w-[200px]">
-                Get A Free AI Audit
+                Meet with Us
                 <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
             </Link>
             <div className="flex flex-col sm:flex-row gap-4">
+              <Link  
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
+              target="_blank"
+              >
+
               <Button size="lg" variant="outline" className="w-full sm:w-auto">
                 Get a Free AI Audit
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              </Link>
+              <Button onClick={() => setIsChatBotOpen(true)} size="lg" variant="outline" className="w-full sm:w-auto">
                 Ask Our AI Any Questions
               </Button>
               <Button

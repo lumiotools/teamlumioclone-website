@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import HeadScripts, { BodyScripts } from "@/components/scripts";
+import { Toaster } from "@/components/ui/toaster";
 
 const dmSans = DM_Sans({
   // variable: "--font-dm-sans",
@@ -26,21 +27,22 @@ export default function RootLayout({
       <head>
         <HeadScripts />
         <link
-            rel="icon"
-            href="/images/logos/favicon-light.ico"
-            media="(prefers-color-scheme: light)"
-          />
-          {/* Favicon for Dark Mode */}
-          <link
-            rel="icon"
-            href="/images/logos/favicon-dark.ico"
-            media="(prefers-color-scheme: dark)"
-          />
+          rel="icon"
+          href="/images/logos/favicon-light.ico"
+          media="(prefers-color-scheme: light)"
+        />
+        {/* Favicon for Dark Mode */}
+        <link
+          rel="icon"
+          href="/images/logos/favicon-dark.ico"
+          media="(prefers-color-scheme: dark)"
+        />
       </head>
       <body className={`${dmSans.className} antialiased`}>
         <Header />
         {children}
         <Footer />
+        <Toaster />
         <BodyScripts />
       </body>
     </html>

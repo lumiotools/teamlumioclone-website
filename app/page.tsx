@@ -15,7 +15,7 @@ const HomePage = () => {
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   return (
     <>
-      <Hero />
+      <Hero setIsChatBotOpen={setIsChatBotOpen}/>
       <Testimonials />
       <Features
         isChatBotOpen={isChatBotOpen}

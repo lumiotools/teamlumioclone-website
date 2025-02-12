@@ -1,4 +1,5 @@
 "use client"
+import { cn } from '@/lib/utils';
 import {motion} from 'framer-motion'
 export function TechPlatforms() {
   const platforms = [
@@ -19,21 +20,30 @@ export function TechPlatforms() {
       logo: "/images/logos/groq.png",
     },
     {
-      name: "Anthropic",
+      name: "Langchain",
       logo: "/images/logos/Langchain.png",
     },
     {
-      name: "HuggingFace",
+      name: "LLama",
       logo: "/images/logos/LLaMA-Meta.png",
     },
     {
-      name: "HuggingFace",
+      name: "LLamaIndex",
       logo: "/images/logos/llamaindex2.png",
     },
     {
-      name: "HuggingFace",
+      name: "Together.ai",
       logo: "/images/logos/Together.ai.png",
     },
+    {
+      name:"Anthropic",
+      logo:"/images/logos/anthropic.webp"
+    },
+    {
+      name:"Anyscale",
+      logo:"/images/logos/anyscale.png",
+      className: 'px-2 w-32'
+    }
   ];
 
   return (
@@ -78,7 +88,7 @@ export function TechPlatforms() {
               <img
                 src={platform.logo}
                 alt={platform.name}
-                className="h-28 w-28 sm:h-20 object-contain"
+                className={cn("h-28 w-28 sm:h-20 object-contain", platform.className)}
                 id={`mmq6p2_${index}`}
               />
             </div>

@@ -6,6 +6,7 @@ import {  ArrowRightIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import  ReactMarkdown  from 'react-markdown';
 import {motion} from 'framer-motion';
+import Link from 'next/Link'
 
 export default function BlogPost() {
   // const router = useRouter();
@@ -202,10 +203,16 @@ export default function BlogPost() {
               ease: "easeOut",
             }}
             viewport={{ once: true }} className="flex justify-center mt-10">
-                <Button size="lg" className="rounded-full">
-                  Book a Free Consultation
-                  <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Button>
+                
+                <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
+              target="_blank"
+            >
+              <Button size="lg" className="rounded-full">
+                Book a Free Consultation
+                <ArrowRightIcon className="ml-1 h-4 w-4" />
+              </Button>
+            </Link>
               </motion.div>
         </div>
       </article>
