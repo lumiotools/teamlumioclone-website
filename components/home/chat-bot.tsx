@@ -132,7 +132,7 @@ export default function ChatBot({
       </Button>
 
       <div
-        className={`fixed bottom-0 right-0 max-w-[100vw] w-[400px] bg-background shadow-lg transform transition-transform duration-300 ease-in-out h-[calc(100vh-4rem)] ${
+        className={`fixed bottom-0 right-0 max-w-[100vw] z-[3] w-[400px] bg-background shadow-lg transform transition-transform duration-300 ease-in-out h-[calc(100vh-4rem)] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
