@@ -87,7 +87,7 @@ export function Hero({
                 <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
             </Link>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <Link  
               href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
               target="_blank"
@@ -121,7 +121,7 @@ export function Hero({
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 text-sm"
+            className="flex items-center gap-4 mt-[-10px] text-sm"
           >
             <div className="flex -space-x-2">
               {[

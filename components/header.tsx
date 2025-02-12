@@ -54,7 +54,7 @@ export function Header() {
               Lumio AI
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
               <Link
                 key={index}
@@ -70,7 +70,7 @@ export function Header() {
             ))}
           </nav>
         </div>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link
             href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
             target="_blank"
@@ -79,14 +79,14 @@ export function Header() {
           </Link>
         </div>
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <XIcon /> : <MenuIcon />}
         </button>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden border-t">
+        <div className="lg:hidden border-t">
           <nav className="container flex flex-col gap-4 py-4">
             {navItems.map((item, index) => (
               <Link
