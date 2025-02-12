@@ -13,10 +13,19 @@ export function Newsletter() {
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+   
+
     setLoading(true);
 
     const form = e.target as HTMLFormElement;
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+
+    if(!email){
+      toast({
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+    }
 
     const response = await (
       await fetch("/api/newsletter", {
@@ -118,7 +127,7 @@ export function Newsletter() {
                 <Button
                   type="submit"
                   className="whitespace-nowrap w-32"
-                  disabled={loading}
+                  disabled={loading }
                 >
                   {loading ? (
                     <LoaderCircle className="animate-spin" />

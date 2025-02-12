@@ -38,29 +38,32 @@ export function CTA() {
               the full potential of AI for your business today.
             </p>
             <div className="flex flex-col items-center gap-4 w-full">
-
               <div className="flex flex-col sm:flex-row gap-4">
-               
                 <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
-                target="_blank"
-              >
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="w-[200px] bg-white text-primary hover:bg-white/90"
+                  href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
+                  target="_blank"
                 >
-                  Meet With Us
-                  <ArrowRightIcon className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-              <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto bg-transparent hover:text-white text-white border-white hover:bg-white/10"
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="w-[200px] bg-white text-primary hover:bg-white/90"
+                  >
+                    Meet With Us
+                    <ArrowRightIcon className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
+                  target="_blank"
                 >
-                  Get a Free AI Audit
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto bg-transparent hover:text-white text-white border-white hover:bg-white/10"
+                  >
+                    Get a Free AI Audit
+                  </Button>
+                </Link>
                 {/* <Button
                   size="lg"
                   variant="outline"
