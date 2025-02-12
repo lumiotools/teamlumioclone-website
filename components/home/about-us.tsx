@@ -183,7 +183,7 @@ export function AboutUs() {
                   <div
                     className="flex w-max animate-scroll"
                     style={{
-                      animationDuration: "20s",
+                      animationDuration: "30s",
                       animationTimingFunction: "linear",
                       animationIterationCount: "infinite",
                     }}
@@ -215,10 +215,10 @@ export function AboutUs() {
       <style jsx global>{`
         @keyframes scroll {
           0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
         }
         .animate-scroll {

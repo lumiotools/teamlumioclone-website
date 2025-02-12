@@ -95,7 +95,7 @@ export function Features({
     },
     {
       title: "AI Powered Search",
-      description: "Search your Data using Natural Language.",
+      description: "Search your data using natural language.",
       videoUrl: "/videos/features-ai-search.mp4",
     },
   ];

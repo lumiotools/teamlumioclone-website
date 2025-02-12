@@ -82,7 +82,7 @@ export function Hero() {
                 <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
             </Link>
-            {/* <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="outline" className="w-full sm:w-auto">
                 Get a Free AI Audit
               </Button>
@@ -97,7 +97,7 @@ export function Hero() {
               >
                 Try Our Voice Agent
               </Button>
-            </div> */}
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 100 }}

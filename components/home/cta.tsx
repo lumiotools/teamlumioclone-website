@@ -38,7 +38,10 @@ export function CTA() {
               the full potential of AI for your business today.
             </p>
             <div className="flex flex-col items-center gap-4 w-full">
-              <Link
+
+              <div className="flex flex-col sm:flex-row gap-4">
+               
+                <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
                 target="_blank"
               >
@@ -47,35 +50,26 @@ export function CTA() {
                   variant="secondary"
                   className="w-[200px] bg-white text-primary hover:bg-white/90"
                 >
-                  Get A Free AI Audit
+                  Meet With Us
                   <ArrowRightIcon className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-
-              {/* <div className="flex flex-col sm:flex-row gap-4">
-                <Button
+              <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10"
+                  className="w-full sm:w-auto bg-transparent hover:text-white text-white border-white hover:bg-white/10"
                 >
                   Get a Free AI Audit
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10"
-                >
-                  Ask Our AI Any Questions
-                </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10"
                   onClick={() => setIsVoiceModalOpen(true)}
                 >
                   Try Our Voice Agent
-                </Button>
-              </div> */}
+                </Button> */}
+              </div>
             </div>
           </div>
         </motion.div>
