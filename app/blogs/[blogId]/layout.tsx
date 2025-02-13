@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import { blogPosts } from '@/constants/blog-data';  // Assuming you have a list of blog posts
 
-export async function generateMetadata({ params }: { params: { blogId: string } }): Promise<Metadata> {
-    const blogId = Number(params.blogId);  // Extract blog ID from URL params
+export async function generateMetadata(params: { params: { blogId: string } }): Promise<Metadata> {
+    const blogId = Number(params.params.blogId);  // Extract blog ID from URL params
     console.log("Layout", blogId);
 
     // Find the blog post based on the ID
     const post = blogPosts.find((post) => post.id === blogId);
-
+    
     // Dynamically setting metadata for the specific blog post
     if (!post) {
         // Handle the case where the post is not found
