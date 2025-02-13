@@ -146,7 +146,7 @@ export const MethodologyContent = () => {
             key={step.id}
             id={`vi9vba_${index}`}
           >
-            <Card className="p-8 hover:shadow-lg transition-shadow border-2 hover:border-primary/50">
+            <Card className="p-5 sm:p-8 hover:shadow-lg transition-shadow border-2 hover:border-primary/50">
               <CardContent className="space-y-6 p-0" id={`pr4bna_${index}`}>
                 <div className="flex items-center gap-4" id={`jlr3e2_${index}`}>
                   <div
@@ -158,11 +158,11 @@ export const MethodologyContent = () => {
                       id={`4g04en_${index}`}
                     />
                   </div>
-                  <h3 className="text-2xl font-bold" id={`cyfgoq_${index}`}>
+                  <h3 className=" text-xl sm:text-2xl font-bold" id={`cyfgoq_${index}`}>
                     {step.letter} - {step.title}
                   </h3>
                 </div>
-                <div className="space-y-4 pl-[4.5rem]" id={`jadp5j_${index}`}>
+                <div className="space-y-4 pl-0 sm:pl-[4.5rem]" id={`jadp5j_${index}`}>
                   {step.description.map((desc, index) => (
                     <p
                       key={index}
