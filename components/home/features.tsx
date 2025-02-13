@@ -238,9 +238,19 @@ export function Features({
           >
             Lumio Use Cases
           </motion.h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 100 }} // Starts below the screen with zero opacity
+            whileInView={{
+              opacity: 1, // Fade in
+              y: 0, // Slide to its natural position
+            }}
+            transition={{
+              duration: 1, // Adjust the duration for the slide effect
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }} className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Examples of AI Solutions We&apos;ve Build Previously
-          </p>
+          </motion.p>
         </div>
 
         <motion.div
