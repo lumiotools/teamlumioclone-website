@@ -83,7 +83,7 @@ export function Testimonials() {
             className="text-center max-w-4xl mx-auto mb-16"
           >
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Trusted by Small to Medium Sized Businesses like Yours
+              Trusted by Businesses Like Yours
             </h2>
             <p className="text-lg  text-muted-foreground">
               See how businesses across industries are leveraging our AI

@@ -88,10 +88,10 @@ export function Footer() {
                   Lumio AI
                 </span>
               </div>
-              <p className="text-muted-foreground mb-4 max-w-sm">
-                Empowering businesses with intelligent AI workers for a more
-                productive and efficient future.
-              </p>
+              <div className="border-t w-[28%] mb-4"/>
+              {/* <p className="text-muted-foreground mb-4 max-w-sm">
+                Empowering businesses with intelligent AI workers for a more productive and efficient future.
+              </p> */}
               <div className="flex gap-4">
                 {links.social.map((social, index) => (
                   <Link

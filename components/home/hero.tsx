@@ -44,8 +44,7 @@ export function Hero({
             viewport={{ once: true }}
             className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight "
           >
-            <span className="text-primary ">Custom AI Workers</span> for Small
-            Businesses
+            Custom <span className="text-primary ">AI Solutions</span> for Your Business
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 100 }}
@@ -78,17 +77,17 @@ export function Hero({
             className="flex flex-col items-center gap-4 w-full"
           >
             <Link
-              href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
               target="_blank"
               className='w-full'
             >
               <Button size="lg" className="w-[250px]">
-                Meet with Us
+                Get a Free AI Audit
                 <ArrowRightIcon className="ml-1 h-4 w-4" />
               </Button>
             </Link>
             <div className="flex flex-col md:flex-row gap-4">
-              <Link  
+              {/* <Link  
               href="https://docs.google.com/forms/d/e/1FAIpQLSfiMB-IkhNT95tBWyC6du56ENayUlBPEZ4G6QGa5s3aEYKsNw/viewform?usp=sharing"
               target="_blank"
               >
@@ -96,7 +95,7 @@ export function Hero({
               <Button size="lg" variant="outline" className="w-[250px]">
                 Get a Free AI Audit
               </Button>
-              </Link>
+              </Link> */}
               <Button onClick={() => setIsChatBotOpen(true)} size="lg" variant="outline" className="w-[250px]">
                 Ask Our AI Any Questions
               </Button>
@@ -106,7 +105,7 @@ export function Hero({
                 className="w-[250px] "
                 onClick={() => setIsVoiceModalOpen(true)}
               >
-                Try Our Voice Agent
+                Ask Our Voice Agent
               </Button>
             </div>
           </motion.div>

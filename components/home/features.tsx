@@ -26,49 +26,49 @@ export function Features({
   setIsChatBotOpen: (isOpen: boolean) => void;
 }) {
   const [activeVideo, setActiveVideo] = useState(0);
-  const [expandedCapability, setExpandedCapability] = useState<number | null>(
-    null
-  );
+  // const [expandedCapability, setExpandedCapability] = useState<number | null>(
+  //   null
+  // );
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
-  const capabilities = [
-    {
-      icon: HeadphonesIcon,
-      title: "Customer Interaction",
-      items: [
-        "Handle support calls 24/7",
-        "Process customer inquiries",
-        "Manage email communications",
-      ],
-    },
-    {
-      icon: LineChartIcon,
-      title: "Business Operations",
-      items: [
-        "Automate workflow processes",
-        "Generate reports automatically",
-        "Monitor KPIs in real-time",
-      ],
-    },
-    {
-      icon: UsersIcon,
-      title: "Team Support",
-      items: [
-        "Facilitate team collaboration",
-        "Automate task assignments",
-        "Track project progress",
-      ],
-    },
-    {
-      icon: CpuIcon,
-      title: "Technical Tasks",
-      items: [
-        "Handle data processing",
-        "Manage system integrations",
-        "Automate technical workflows",
-      ],
-    },
-  ];
+  // const capabilities = [
+  //   {
+  //     icon: HeadphonesIcon,
+  //     title: "Customer Interaction",
+  //     items: [
+  //       "Handle support calls 24/7",
+  //       "Process customer inquiries",
+  //       "Manage email communications",
+  //     ],
+  //   },
+  //   {
+  //     icon: LineChartIcon,
+  //     title: "Business Operations",
+  //     items: [
+  //       "Automate workflow processes",
+  //       "Generate reports automatically",
+  //       "Monitor KPIs in real-time",
+  //     ],
+  //   },
+  //   {
+  //     icon: UsersIcon,
+  //     title: "Team Support",
+  //     items: [
+  //       "Facilitate team collaboration",
+  //       "Automate task assignments",
+  //       "Track project progress",
+  //     ],
+  //   },
+  //   {
+  //     icon: CpuIcon,
+  //     title: "Technical Tasks",
+  //     items: [
+  //       "Handle data processing",
+  //       "Manage system integrations",
+  //       "Automate technical workflows",
+  //     ],
+  //   },
+  // ];
 
   const videoShowcase = [
     {
@@ -104,7 +104,7 @@ export function Features({
     <section className="py-20 bg-background" id="features">
       <div className="container px-4">
         {/* New Capabilities Section */}
-        <div className="mb-20">
+       {/* <div className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{
@@ -125,8 +125,8 @@ export function Features({
               Intelligent Automation
             </Badge>
             <h2 className="text-4xl font-bold tracking-tight mt-2">
-              Your Business Process,{" "}
-              <span className="text-primary">Our AI Solution</span>
+              Your Business Processes,{" "}
+              <span className="text-primary">Our AI Solutions</span>
             </h2>
             <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
               Describe your company&apos;s unique workflows and challenges, and
@@ -134,7 +134,7 @@ export function Features({
               operational needs.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {capabilities.map((capability, index) => (
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -218,8 +218,8 @@ export function Features({
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
+          </div> *
+        </div> */}
 
         {/* Video Showcase Section */}
         <div className="text-center mb-8">
@@ -234,10 +234,13 @@ export function Features({
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight mb-6"
+            className="text-3xl font-bold tracking-tight"
           >
-            Examples of AI Solutions We&apos;ve Built Previously
+            Lumio Use Cases
           </motion.h2>
+          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+            Examples of AI Solutions We&apos;ve Build Previously
+          </p>
         </div>
 
         <motion.div
@@ -325,7 +328,7 @@ export function Features({
                   onClick={() => setIsVoiceModalOpen(true)}
                 >
                   <Mic className="mr-3 h-5 w-5" />
-                  Try Our Voice Agent
+                  Ask Our Voice Agent
                 </Button>
                 <Button
                   variant="outline"

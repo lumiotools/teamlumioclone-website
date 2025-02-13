@@ -20,12 +20,12 @@ export function Header() {
   const router = useRouter();
 
   const navItems = [
-    { label: "Testimonials", href: "/#testimonials" },
-    { label: "Solutions", href: "/#features" },
     { label: "About", href: "/#about" },
+    { label: "Solutions", href: "/#features" },
+    { label: "Testimonials", href: "/#testimonials" },
     { label: "Methodology", href: "/methodology" },
-    { label: "Blogs", href: "/blogs" },
     { label: "Careers", href: "/careers" },
+    { label: "Blogs", href: "/blogs" },
   ];
 
   const handleNavClick = (
@@ -75,7 +75,7 @@ export function Header() {
             href="https://calendar.app.google/y7JF4YKa7uBkyxr18"
             target="_blank"
           >
-            <Button>Let&apos;s Talk</Button>
+            <Button>Meet with Us</Button>
           </Link>
         </div>
         <button
