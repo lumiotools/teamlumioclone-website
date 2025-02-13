@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "join Lumio AI",
     "AI solution careers",
   ],
-  authors: [{ name: "Lumio AI Team", url: "https://www.teamlumio.ai" }],
+  authors: [{ name: "Lumio AI", url: "https://www.teamlumio.ai" }],
   openGraph: {
     title: "Join Lumio AI: Careers in Innovative AI Solutions",
     description:

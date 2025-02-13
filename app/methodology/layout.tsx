@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "structured AI approach",
     "Lumio AI",
   ],
-  authors: [{ name: "Lumio AI Team", url: "https://www.teamlumio.ai" }],
+  authors: [{ name: "Lumio AI", url: "https://www.teamlumio.ai" }],
   openGraph: {
     title: "Empowering Small Businesses with AI: The DROP™ Framework | Lumio AI",
     description:
