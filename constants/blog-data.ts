@@ -4,6 +4,7 @@ export interface BlogPost {
   date: string;
   image: string;
   category: string;
+  description:string;
   content: string;
 }
 
@@ -16,6 +17,7 @@ export const blogPosts: BlogPost[] = [
     image:
       "/images/blog1.avif",
     category: "Enterprise",
+    description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     content: `The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.  
   
 
@@ -72,6 +74,7 @@ Discover how AI can revolutionize your business processes. Book a free consultat
     image:
       "/images/blog2.avif",
     category: "Enterprise",
+    description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     content: `With over 100 million songs and 600 million subscribers worldwide, Spotify has become a global powerhouse in audio streaming, driven by a mission to connect listeners with the perfect soundtrack for every moment. At the heart of Spotify's success is a suite of AI-powered features that personalize song recommendations, allowing listeners to explore new music and revisit old favorites. Through AI innovations like the **AI DJ** and **AI Playlist Generator**, Spotify is reimagining how people discover music, tapping into user preferences in ways that feel increasingly intuitive.  
   
 
@@ -106,6 +109,7 @@ Spotify's advancements in AI-powered music discovery underscore the technology's
     date: "Nov 9, 2024",
     image:
       "/images/blog3.webp",
+      description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     category: "Enterprise",
     content: `In the quest for medical breakthroughs, Pfizer has embraced artificial intelligence (AI) as a cornerstone of its innovation strategy. With the appointment of Berta Rodriguez-Hervas as Chief AI and Analytics Officer, Pfizer is taking bold steps to leverage AI across its drug discovery, clinical development, and patient care processes. From utilizing AI to accelerate drug development to enhancing its marketing capabilities, Pfizer exemplifies how AI can transform  
   
@@ -143,6 +147,7 @@ Pfizer’s commitment to integrating AI into its operations showcases the transf
     image:
       "/images/blog4.avif",
     category: "Enterprise",
+    description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     content: `In the highly competitive and data-driven world of finance, JPMorgan Chase has emerged as a leader in artificial intelligence (AI) adoption. From leveraging machine learning to fight fraud to deploying generative AI assistants that boost employee productivity, the largest U.S. bank is setting new standards for how the financial industry can use AI to create value. With an AI workforce larger than any other financial organization, JPMorgan Chase is not only embracing this technology but also shaping the future of banking.  
   
 
@@ -182,6 +187,7 @@ JPMorgan Chase’s journey to becoming a tech-first financial powerhouse demonst
     image:
       "/images/blog5.avif",
     category: "Enterprise",
+    description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     content: `In the fast-paced world of customer service, answering calls and handling queries can quickly become overwhelming—especially during busy seasons. Bella Santé, a leading Med Spa with over 200 staff and three locations in Greater Boston, recognized the need to streamline its customer service operations while maintaining a personalized touch. To solve this, they introduced an AI-powered chatbot, to handle the bulk of customer inquiries and support their existing call center. The result? A significant reduction in call volume, a boost in leads, and a $66K increase in sales, all while offering customers a seamless, personalized experience.  
   
 
@@ -211,6 +217,7 @@ Bella Santé’s adoption of AI-powered chatbots has proven to be a game-changer
     image:
       "/images/blog6.webp",
     category: "Enterprise",
+    description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
     content: `Real estate has always been an industry driven by relationships and expertise, but with the rise of artificial intelligence (AI), the way people buy and sell homes is being transformed. Redfin, a leading real estate brokerage, has harnessed AI to enhance every step of the home buying process, making it faster, easier, and more personalized. Redfin combines agent expertise with AI-powered tools like recommendations and market forecasts, helping buyers find their dream homes with less stress and greater confidence.  
   
 
@@ -246,6 +253,7 @@ As the real estate industry continues to evolve, companies like Redfin are showi
       date: "Oct 23, 2024",
       image: "/images/blog7.svg",
       category: "Enterprise",
+      description:"The business world is evolving, and the tools you use to manage your operations need to evolve with it. If you're attending or exploring insights from Acumatica Summit, it’s time to discover how Artificial Intelligence (AI) can transform your ERP experience. Imagine streamlining your workflows, automating repetitive tasks, and making data-driven decisions faster than ever before. This is the future of business management—and it's already here.",
       content: `In the highly competitive world of real estate, few companies have managed to stay ahead of the curve like Keller Williams. As the largest real estate franchise globally, Keller Williams is a company with deep roots in tradition. Yet, its forward-thinking founder, Gary Keller, made a bold decision to pivot toward becoming a tech-first company. By betting on AI, cloud computing, and agile development, Keller Williams launched innovative tools like Kelle, an AI-powered assistant dubbed as "Siri for real estate." In this blog, we’ll explore how Keller Williams harnesses the power of AI to drive its digital transformation and redefine the role of technology in real estate.  
   
 
