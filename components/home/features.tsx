@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import {
   // PlayIcon,
-  HeadphonesIcon,
-  LineChartIcon,
-  UsersIcon,
-  CpuIcon,
-  ChevronRightIcon,
-  ChevronDownIcon,
+  // HeadphonesIcon,
+  // LineChartIcon,
+  // UsersIcon,
+  // CpuIcon,
+  // ChevronRightIcon,
+  // ChevronDownIcon,
   Mic,
   MessageSquare,
 } from "lucide-react";

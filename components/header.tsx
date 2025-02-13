@@ -46,7 +46,7 @@ export function Header() {
             onClick={(e) => handleNavClick("/", e)}
           >
             <div className="h-8 w-8">
-              <img src="/images/logos/Lumio AI.png" />
+              <img src="/images/logos/Lumio AI.png" alt="logo"/>
             </div>
             <span
               className={`text-xl font-bold text-primary ${ubuntu.className}`}
