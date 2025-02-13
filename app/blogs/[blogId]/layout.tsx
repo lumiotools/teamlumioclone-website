@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { blogPosts } from '@/constants/blog-data';  // Assuming you have a list of blog posts
 
-export function generateMetadata({ params }: { params: { blogId: string } }): Metadata {
+export async function generateMetadata({ params }: { params: { blogId: string } }): Promise<Metadata> {
     const blogId = Number(params.blogId);  // Extract blog ID from URL params
     console.log("Layout", blogId);
 
