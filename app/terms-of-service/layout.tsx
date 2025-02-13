@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     openGraph: {
       title: "Terms of Service - Lumio AI",
       description: "Read the terms of service for Lumio AI, including user responsibilities, payment terms, and more.",
-      url: "https://teamlumio.ai/terms-of-service",
+      url: "https://www.teamlumio.ai/terms-of-service",
       type: "website",
     },
 };

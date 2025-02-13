@@ -123,6 +123,7 @@ export default function Blogs() {
                 duration: 0.5,
                 // delay: index%2 * 0.2,
                 ease: "easeOut",
+                amount:0.2,
               }}
               viewport={{ once: true }}
               key={post.id}

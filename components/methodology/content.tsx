@@ -86,7 +86,7 @@ export const MethodologyContent = () => {
         className="max-w-4xl mx-auto space-y-6"
       >
         <h2 className="text-3xl font-bold">Introduction</h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-lg text-muted-foreground leading-relaxed text-justify">
           Small businesses today face growing challenges in managing operations
           efficiently, keeping up with technology, and staying competitive. At
           Lumio AI, we specialize in Custom AI Workers that help small
@@ -114,13 +114,13 @@ export const MethodologyContent = () => {
           ease: "easeOut",
         }}
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto space-y-6"
+        className="max-w-4xl mx-auto space-y-6 "
       >
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold ">
           Understanding the DROP<span className="mr-2 font-normal">™</span>
           Framework
         </h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-lg text-justify text-muted-foreground leading-relaxed">
           The DROP<span className="mr-2 font-normal">™</span>Framework is
           designed specifically for small businesses looking to harness AI for
           automation and smarter decision-making. Each phase ensures that AI is
@@ -166,7 +166,7 @@ export const MethodologyContent = () => {
                   {step.description.map((desc, index) => (
                     <p
                       key={index}
-                      className="text-muted-foreground leading-relaxed"
+                      className="text-muted-foreground text-justify leading-relaxed"
                       id={`kyqg9m_${index}`}
                     >
                       {desc}
@@ -174,7 +174,7 @@ export const MethodologyContent = () => {
                   ))}
                   {step.bullets && (
                     <ul
-                      className="list-disc pl-6 space-y-2 text-muted-foreground"
+                      className="list-disc pl-6 space-y-2 text-justify text-muted-foreground"
                       id={`qqfqy5_${index}`}
                     >
                       {step.bullets.map((bullet, index) => (
@@ -209,7 +209,7 @@ export const MethodologyContent = () => {
           The Role of DROP<span className="mr-2 font-normal">™</span>in Small
           Business AI Adoption
         </h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-lg text-muted-foreground leading-relaxed text-justify">
           With the DROP<span className="mr-2 font-normal">™</span>Framework,
           small businesses can integrate AI into their workflows without the
           need for extensive technical expertise or expensive enterprise

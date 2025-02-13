@@ -81,7 +81,7 @@ export default function BlogPost() {
               duration: 1,
               ease: "easeOut",
             }}
-            viewport={{ once: true }} >
+            viewport={{ once: true }} className="text-justify w-full items-center flex flex-col justify-center">
 
           <ReactMarkdown className="prose lg:prose-xl">{post?.content}</ReactMarkdown>
             </motion.div>

@@ -18,7 +18,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-4">
                 1. Acceptance of Terms
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 By accessing or using the services provided by Lumio AI
                 (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or
                 &quot;us&quot;), you (&quot;User,&quot; &quot;you,&quot; or
@@ -32,7 +32,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-4">
                 2. Services Provided
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 Lumio AI specializes in delivering AI-driven solutions,
                 including automation, predictive analytics, chatbots, and
                 process optimization, tailored for small and mid-sized
@@ -45,21 +45,21 @@ export default function TermsOfService() {
                 3. User Responsibilities
               </h2>
               <div className="space-y-4">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Accurate Information:
                   </strong>{" "}
                   You agree to provide truthful, accurate, and complete
                   information when engaging with our services.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Compliance with Laws:
                   </strong>{" "}
                   You agree to use our services in accordance with all
                   applicable laws and regulations.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Prohibited Activities:
                   </strong>{" "}
@@ -75,20 +75,20 @@ export default function TermsOfService() {
                 4. Payment and Pricing
               </h2>
               <div className="space-y-4">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Project-Based Pricing:
                   </strong>{" "}
                   Our services are offered on a project basis with transparent,
                   fixed pricing as outlined in individual agreements.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">Payment Terms:</strong>{" "}
                   Payments are due as specified in your project agreement.
                   Failure to make timely payments may result in suspension or
                   termination of services.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">Pricing Changes:</strong>{" "}
                   We reserve the right to modify our pricing structure with
                   prior notice to you.
@@ -101,7 +101,7 @@ export default function TermsOfService() {
                 5. Intellectual Property
               </h2>
               <div className="space-y-4">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Company Ownership:
                   </strong>{" "}
@@ -109,12 +109,12 @@ export default function TermsOfService() {
                   the intellectual property of the Company and are protected by
                   applicable laws.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">User License:</strong> We
                   grant you a limited, non-exclusive, non-transferable license
                   to use our services for your internal business purposes.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">Restrictions:</strong> You
                   may not reproduce, distribute, modify, or create derivative
                   works of our materials without our prior written consent.
@@ -127,18 +127,18 @@ export default function TermsOfService() {
                 6. Limitation of Liability
               </h2>
               <div className="space-y-4">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">No Warranty:</strong> Our
                   services are provided &quot;as is&quot; without any
                   warranties, express or implied.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">Limitation:</strong> To
                   the fullest extent permitted by law, Lumio AI shall not be
                   liable for any indirect, incidental, special, or consequential
                   damages arising from your use of our services.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   <strong className="text-foreground">
                     Maximum Liability:
                   </strong>{" "}
@@ -152,7 +152,7 @@ export default function TermsOfService() {
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">7. Termination</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 We reserve the right to suspend or terminate your access to our
                 services at our sole discretion, without notice, for conduct
                 that we believe violates these Terms of Service or is harmful to
@@ -162,7 +162,7 @@ export default function TermsOfService() {
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 These Terms of Service are governed by and construed in
                 accordance with the laws of California, United States, without
                 regard to its conflict of law principles. Any legal action or
@@ -175,7 +175,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-4">
                 9. Changes to Terms
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 We may update these Terms of Service from time to time. We will
                 notify you of any changes by posting the new terms on our
                 website with an updated effective date. Your continued use of
@@ -186,7 +186,7 @@ export default function TermsOfService() {
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 If you have any questions about these Terms of Service, please
                 contact us at{" "}
                 <Link href="mailto:contact@teamlumio.ai" target="_blank">

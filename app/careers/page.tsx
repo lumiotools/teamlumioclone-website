@@ -128,7 +128,7 @@ export default function Careers() {
                     >
                       {benefit.title}
                     </h3>
-                    <p className="text-muted-foreground" id={`hkwu1b_${index}`}>
+                    <p className="text-muted-foreground text-justify" id={`hkwu1b_${index}`}>
                       {benefit.description}
                     </p>
                   </CardContent>
@@ -194,7 +194,7 @@ export default function Careers() {
                         {value.title}
                       </h3>
                     </div>
-                    <p className="text-muted-foreground" id={`pnwe6c_${index}`}>
+                    <p className="text-muted-foreground text-justify" id={`pnwe6c_${index}`}>
                       {value.description}
                     </p>
                   </CardContent>
