@@ -3,7 +3,7 @@ import { blogPosts } from '@/constants/blog-data';  // Assuming you have a list 
 
 type Props = {
     params: {
-      blogId: number;
+      blogId: string;
     };
 };
 
@@ -57,7 +57,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export const metadataBase = new URL('https://teamlumio.ai');  // Set your base URL here
 
 export default function BlogsIdLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
