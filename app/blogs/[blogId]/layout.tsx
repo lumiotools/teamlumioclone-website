@@ -3,7 +3,7 @@ import { blogPosts } from '@/constants/blog-data';  // Assuming you have a list 
 
 type Props = {
     params: {
-      blogId: string;
+      blogId: number;
     };
 };
 
