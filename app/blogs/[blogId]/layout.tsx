@@ -2,9 +2,7 @@ import { Metadata } from 'next';
 import { blogPosts } from '@/constants/blog-data';  // Assuming you have a list of blog posts
 
 type Props = {
-    params: {
-      blogId: number;
-    };
+    params: Promise<{ blogId: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
